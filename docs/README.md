@@ -1,4 +1,4 @@
-# Insdagram
+# Instashop
 
 [Heroku link][heroku]
 
