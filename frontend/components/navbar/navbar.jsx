@@ -20,7 +20,8 @@ class NavBarForm extends React.Component {
   render() {
     return (
       <div>
-				<Link onClick={this.post}>logout</Link>
+				<Link onClick={this.post}>add item</Link>
+				<br/>
         <Link onClick={this.signout}>logout</Link>
       </div>
     );
