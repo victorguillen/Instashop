@@ -9,6 +9,14 @@ class SessionForm extends React.Component {
 		this.guestLogin = this.guestLogin.bind(this);
 	}
 
+	// componentDidUpdate() {
+	// 	this.logoutUser();
+	// }
+	//
+	// logoutUser(){
+	//
+	// }
+
 	update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
@@ -18,6 +26,7 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
+		// debugger;
 		this.props.processForm({user}).then(() => this.props.router.push("/"));
 	}
 

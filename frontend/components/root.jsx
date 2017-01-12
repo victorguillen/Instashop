@@ -11,9 +11,9 @@ import PostForm from './post_form/post_form_container';
 
 const Root = ({ store }) => {
 
-  const _ensureLoggedIn = (nextState, replace) => {
+const _ensureLoggedIn = (nextState, replace) => {
+  // debugger;
   const currentUser = store.getState().session.currentUser;
-  debugger;
   if (!currentUser) {
     replace('/login');
   }
@@ -21,6 +21,7 @@ const Root = ({ store }) => {
 
 const _redirectIfLoggedIn = (nextState, replace) => {
   const currentUser = store.getState().session.currentUser;
+  // debugger;
   if (currentUser) {
     replace('/');
   }
@@ -30,8 +31,8 @@ const _redirectIfLoggedIn = (nextState, replace) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={ App } onEnter={_ensureLoggedIn}>
-          <IndexRoute component={ PostIndexContainer } />
-          <Route path="/post" component={ PostForm } />
+          <IndexRoute component={ PostIndexContainer }  />
+          <Route path="/post" component={ PostForm }  />
         </Route>
         <Route path="login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />

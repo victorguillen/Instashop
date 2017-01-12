@@ -8,13 +8,11 @@ class NavBarForm extends React.Component {
 	}
 
   signout() {
-
-    this.props.logout();
-    hashHistory.push('/login');
+    this.props.logout().then( () => hashHistory.push('/login'));
   }
 
 	post() {
-		hashHistory.push('/post');
+		hashHistory.replace('/post');
 	}
 
   render() {
