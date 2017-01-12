@@ -33,10 +33,25 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup">sign up instead</Link>;
+			return (
+				<div>
+					Don't have an account <Link to="/signup">Sign up</Link>
+				</div>
+			);
 		} else {
-			return <Link to="/login">log in instead</Link>;
+			return (
+				<div>
+					Have an account <Link to="/login">Log in</Link>
+				</div>
+			);
 		}
+	}
+
+	loginButton() {
+		if (this.props.formType === "login") {
+			return ("Log in");
+		} else {
+			return ("Sign up");		}
 	}
 
 	renderErrors() {
@@ -56,33 +71,38 @@ class SessionForm extends React.Component {
 
 		return (
 			<div>
-				<form onSubmit={this.handleSubmit}>
-					Signup
-					<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484187228/logo_sfg8oq.png" width="40"/>
+				<div>
 					<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484187232/insta_logo_re5hwe.png" width="40"/>
+					<form onSubmit={this.handleSubmit}>
+						<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484187228/logo_sfg8oq.png" width="40"/>
+						<br/>
+						{this.renderErrors()}
+						<div>
+							<br/>
 
-					<br/>
-					{this.renderErrors()}
-					<div>
-						<br/>
-						<label> Username:
-							<input type="text"
-								value={this.state.username}
-								onChange={this.update("username")}
-							/>
-						</label>
-						<br/>
-						<label> Password:
-							<input type="password"
-								value={this.state.password}
-								onChange={this.update("password")}
-						  />
-						</label>
-						<input type="submit" value="Submit" />
-						<br/>
-						Please {this.props.formType} or {this.navLink()}
-					</div>
-				</form>
+								<input type="text"
+									placeholder="Username"
+									value={this.state.username}
+									onChange={this.update("username")}
+									/>
+
+							<br/>
+
+								<input type="password"
+									placeholder="Password"
+									value={this.state.password}
+									onChange={this.update("password")}
+									/>
+
+								<br/>
+
+							<input type="submit" value={this.loginButton()} />
+
+							<br/>
+						</div>
+					</form>
+				</div>
+					{this.navLink()}
 			</div>
 		);
 	}

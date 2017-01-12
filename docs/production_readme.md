@@ -1,6 +1,6 @@
 # Instashop
 
-[Instashop Live][heroku] 
+[Instashop Live][heroku]
 
 [heroku]: https://dashboard.heroku.com/
 

@@ -34,8 +34,8 @@
 - `DELETE /api/comments/:id`
 
 ### Likes
-  - `POST /api/posts/:post_id/likes` 
-  - `DELETE /api/likes/:id` 
+  - `POST /api/posts/:post_id/likes`
+  - `DELETE /api/likes/:id`
 
 ### Follows
   - `POST /api/follows`
