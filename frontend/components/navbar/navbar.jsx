@@ -13,9 +13,14 @@ class NavBarForm extends React.Component {
     hashHistory.push('/login');
   }
 
+	post() {
+		hashHistory.push('/post');
+	}
+
   render() {
     return (
       <div>
+				<Link onClick={this.post}>logout</Link>
         <Link onClick={this.signout}>logout</Link>
       </div>
     );

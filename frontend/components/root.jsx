@@ -7,6 +7,7 @@ import App from './app';
 import SessionFormContainer from './session_form/session_container'; //Login
 import NavBar from './navbar/navbar_container';
 import PostIndexContainer from './post/post_index_container'; //Feed
+import PostForm from './post_form/post_form_container';
 
 const Root = ({ store }) => {
 
@@ -29,6 +30,7 @@ const _redirectIfLoggedIn = (nextState, replace) => {
       <Router history={hashHistory}>
         <Route path="/" component={ App }>
           <IndexRoute component={ PostIndexContainer } />
+          <Route path="/post" component={ PostForm } />
         </Route>
         <Route path="login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
