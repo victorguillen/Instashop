@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-// import { logout } from '../../actions/session_actions';
+import { createPost, deletePost } from '../../actions/post_actions';
 import PostForm from './post_form';
 
 const mapStateToProps = ( state ) => ({
-  // currentUser: state.session.currentUser
+  post: state.post,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    // logout: user => dispatch(logout(user))
+    createPost: post => dispatch(createPost(post)),
+    deletePost: () => dispatch(deletePost())
   };
 };
 

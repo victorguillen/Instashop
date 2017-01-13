@@ -1,0 +1,75 @@
+
+@import "base/fonts.scss";
+@import "base/colors.scss";
+
+.icons {
+  width: 23px;
+	height: 23px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.img-login-nav {
+  width: 100px;
+	height: 40px;
+  padding-right: 20px;
+}
+
+.img-logo-nav {
+  width: 35px;
+	height: 35px;
+  padding-right: 20px;
+}
+
+.logo-container {
+  display: flex;
+  width: 345px;
+  height: 35px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 315px;
+  height: 28px;
+}
+
+.icon-cont-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 357px;
+	height: 31px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+  justify-content: flex-start;
+  width: 156px;
+	height: 24px;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+	height: 75px;
+  border: 1px solid $grey;
+}
+
+#root {
+  width: 100%;
+}
+
+#app {
+  width: 100%;
+}
+
+#header-id {
+  width: 100%;
+}

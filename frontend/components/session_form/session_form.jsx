@@ -9,14 +9,6 @@ class SessionForm extends React.Component {
 		this.guestLogin = this.guestLogin.bind(this);
 	}
 
-	// componentDidUpdate() {
-	// 	this.logoutUser();
-	// }
-	//
-	// logoutUser(){
-	//
-	// }
-
 	update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value

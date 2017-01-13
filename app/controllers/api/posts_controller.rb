@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Api::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
@@ -9,13 +9,17 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by_id(params[:post][:id]);
-    
+    @post = Post.find_by_id(params[:id]);
+    if @post
+      @post.destroy
+    end
   end
 
   def post_params
     params.require(:post).permit(
-      :image_url, :item_url, :price, :caption
+      :image_url, :item_url, :price,
+      :caption, :user_id, :category,
+      :gender
     )
   end
 end
