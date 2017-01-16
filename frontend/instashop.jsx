@@ -11,10 +11,29 @@ import Root from './components/root';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const store = configureStore();
-  window.store = store;
-  window.getPosts = UtilProfile.getPosts;
-  window.receivePosts = receivePosts;
+  let store;
+  if (window.currentUser) {
+    store = configureStore({
+      session: {
+        currentUser: window.currentUser,
+        errors: [],
+      },
+      profile: {
+        posts: {},
+        errors: []
+      }
+    });
+  }
+  else {
+    store = configureStore();
+  }
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
+
+
+
+// window.store = store;
+// window.ajaxFetch = UtilProfile.getPosts;
+// window.getPosts = getPosts;
+// window.receivePosts = receivePosts;

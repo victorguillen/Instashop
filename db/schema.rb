@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170112174050) do
     t.string   "image_url",  null: false
     t.string   "item_url",   null: false
     t.integer  "category"
-    t.integer  "gender"
+    t.string   "gender"
     t.integer  "price",      null: false
     t.text     "caption"
     t.integer  "user_id",    null: false

@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.string :image_url, null: false
       t.string :item_url, null: false
       t.integer :category
-      t.integer :gender
+      t.string :gender
       t.integer :price, null: false
       t.text :caption
       t.integer :user_id, null: false

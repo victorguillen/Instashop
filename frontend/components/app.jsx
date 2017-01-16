@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./navbar/navbar_container";
 
 const App = ({ children }) => (
-  <div id="app">
+  <div id="app" className="app">
     <header id="header-id">
       <NavBar />
     </header>

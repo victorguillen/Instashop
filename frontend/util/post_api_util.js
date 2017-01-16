@@ -1,3 +1,11 @@
+export const fetchPosts = (user) => (
+  $.ajax({
+    method: "GET",
+    url: "/api/posts",
+    data: user
+  })
+);
+
 export const createPost = (post) => (
   $.ajax({
     method: "POST",

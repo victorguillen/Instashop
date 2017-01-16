@@ -5,8 +5,7 @@ import { ProfileReducer } from "./profile_reducer";
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  post: PostReducer,
-  profile: ProfileReducer
+  posts: PostReducer,
 });
 
 export default RootReducer;

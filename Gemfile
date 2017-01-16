@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'annotate'
 gem 'pry-rails'
 gem 'bcrypt'
+
+gem 'cloudinary'
+gem 'figaro'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

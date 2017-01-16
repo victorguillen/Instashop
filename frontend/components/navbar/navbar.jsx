@@ -6,12 +6,18 @@ class NavBarForm extends React.Component {
 		super(props);
     this.signout = this.signout.bind(this);
 		this.profile = this.profile.bind(this);
+		this.feed = this.feed.bind(this);
 		this.userId = this.props.currentUser.id;
 	}
 
   signout() {
     this.props.logout().then( () => hashHistory.push('/login'));
   }
+
+	feed() {
+		hashHistory.replace('/');
+	}
+
 
 	post() {
 		hashHistory.replace('/post');
@@ -27,13 +33,13 @@ class NavBarForm extends React.Component {
 				<div className="logo-container">
 					<img
 						src="http://res.cloudinary.com/duovuuybb/image/upload/v1484187228/logo_sfg8oq.png"
-						onClick={this.post}
+						onClick={this.feed}
 						className="img-logo-nav"
 						/>
 					<br/>
 						<img
 							src="http://res.cloudinary.com/duovuuybb/image/upload/v1484187232/insta_logo_re5hwe.png"
-							onClick={this.post}
+							onClick={this.feed}
 							className="img-login-nav"
 							/>
 				</div>

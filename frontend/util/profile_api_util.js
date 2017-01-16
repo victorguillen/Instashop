@@ -1,14 +1,7 @@
 export const getPosts = (user) => (
   $.ajax({
     method: "GET",
-    url: "/api/profile/index",
+    url: "/api/posts",
     data: user
   })
 );
-//
-// export const receivePost = (id) => (
-//   $.ajax({
-//     method: "GET",
-//     url: `/api/posts/${id}`
-//   })
-// );
