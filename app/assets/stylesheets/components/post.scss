@@ -54,15 +54,66 @@
 }
 
 .post-div {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 293px;
   height: 293px;
   margin: 20px;
-  // background-color: white;
-  // border: 1px solid $grey;
+  cursor: pointer;
+}
+
+.modal-post {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 784px;
+  height: 449px;
+}
+
+.modal-rightside {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: 335px;
+  height: 449px;
+}
+
+.modal-img {
+  background-color: white;
+  width: 449px;
+  height: 449px;
+  cursor: pointer;
 }
 
 .post-img {
+  background-color: white;
   width: 293px;
   height: 293px;
+}
+
+.modal-header {
+  width: 287px;
+  height: 78px;
+  border-color: $grey;
+  border-bottom: inset;
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: 335px;
+  height: 371px;
+  overflow: scroll;
+}
+
+.modal-footer {
+  width: 287px;
+  height: 68px;
+}
+
+.modal-comments {
+  width: 216px;
+  height: 20px;
 }
