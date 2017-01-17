@@ -16,28 +16,28 @@ ActiveRecord::Schema.define(version: 20170112174050) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.string   "image_url",  null: false
-    t.string   "item_url",   null: false
+    t.string   "image_url",  default: "", null: false
+    t.string   "item_url",   default: "", null: false
     t.integer  "category"
-    t.string   "gender"
-    t.integer  "price",      null: false
-    t.text     "caption"
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "gender",     default: ""
+    t.integer  "price",      default: 0,  null: false
+    t.text     "caption",    default: ""
+    t.integer  "user_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "full_name"
-    t.string   "email"
-    t.string   "image_url"
-    t.text     "bio"
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "username",                              null: false
+    t.string   "full_name",       default: "Name"
+    t.string   "email",           default: "Email"
+    t.string   "image_url",       default: "Image URL"
+    t.text     "bio",             default: "Bio"
+    t.string   "password_digest",                       null: false
+    t.string   "session_token",                         null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 

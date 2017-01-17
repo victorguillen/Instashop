@@ -11,8 +11,8 @@ module.exports = {
   },
   content : {
     position                   : 'absolute',
-    top                        : '40px',
-    left                       : '40px',
+    top                        : '16%',
+    left                       : '20%',
     right                      : '40px',
     bottom                     : '40px',
     border                     : '1px solid #ccc',

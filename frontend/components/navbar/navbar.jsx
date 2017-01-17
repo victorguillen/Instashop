@@ -45,7 +45,7 @@ class NavBarForm extends React.Component {
 				</div>
 				<div className="search-container">
 					<i className="fa fa-search" aria-hidden="true"></i>
-					<p>Search</p>
+					<p className="p-nav">Search</p>
 				</div>
 				<div className="icon-cont-wrapper">
 					<div className="icon-container">
@@ -67,8 +67,6 @@ class NavBarForm extends React.Component {
 							className="icons"
 							/>
 					</div>
-					<Link to="/users/2">user 2</Link>
-					<Link to="/users/1">user 1</Link>
 				</div>
       </div>
     );

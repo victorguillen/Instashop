@@ -19,7 +19,10 @@ const ProfileHeader = ( {user} ) => {
           <p className="post-followers">0 Followers</p>
           <p className="post-followers">0 Following</p>
         </div>
-        <h2 className="profile-header-h2">{user.full_name}</h2>
+        <div className="bio-nav">
+          <h2 className="profile-header-h2">{user.full_name}</h2>
+          <p className="bio-p">{user.bio}</p>
+        </div>
       </div>
     </div>
   );

@@ -68,14 +68,23 @@ class PostIndexItem extends React.Component {
           </div>
           <div className='modal-rightside'>
             <header className='modal-header'>
-              profile pic
+              <img src={this.post.user_image_url} className="modal-img-user" />
             </header>
             <div className='modal-body'>
-              photo info
+							<div>
+								<p className="modal-caption">{this.post.caption}</p>
+								<br/>
+								<p className="modal-price">${this.post.price}</p>
+							</div>
             </div>
-            <div className='modal-footer'>
+						<div className="modal-want-buy-container">
+							<button className="modal-want" onClick="">Want</button>
+							<button className="modal-buy" onClick="">Buy</button>
+						</div>
+            <div className='modal-comment-box'>
               {this.comments}
             </div>
+						<input type="text" value="   Add a comment" className="modal-comments" />
           </div>
         </div>
         </Modal>
