@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: https://www.heroku.com/home
+[heroku]: https://www.insta-shop.io
 
 [Trello link][trello]
 
