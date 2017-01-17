@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
-import { updateUser } from '../../actions/user_actions';
+import { updateUser, fetchUser } from '../../actions/user_actions';
 import EditForm from './edit_form';
 
 const mapStateToProps = ( state ) => ({
-  currentUser: state.session.currentUser
+  user: state.user
 });
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
     updateUser: user => dispatch(updateUser(user)),
+    fetchUser: id => dispatch(fetchUser(id)),
   };
 };
 

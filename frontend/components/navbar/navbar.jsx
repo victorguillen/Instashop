@@ -44,7 +44,8 @@ class NavBarForm extends React.Component {
 							/>
 				</div>
 				<div className="search-container">
-					search bar
+					<i className="fa fa-search" aria-hidden="true"></i>
+					<p>Search</p>
 				</div>
 				<div className="icon-cont-wrapper">
 					<div className="icon-container">

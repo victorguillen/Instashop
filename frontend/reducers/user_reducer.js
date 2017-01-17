@@ -1,4 +1,4 @@
-import { RECEIVE_USER, RECEIVE_ERRORS } from "../actions/user_actions";
+import { RECEIVE_USER, RECEIVE_ERRORS, UPDATE_CURRENT_USER } from "../actions/user_actions";
 
 
 import merge from 'lodash/merge';
@@ -12,9 +12,11 @@ export const UserReducer = (state = defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, defaultState, {targetUser: action.targetUser});
+      return merge({}, state, {targetUser: action.targetUser});
+    case UPDATE_CURRENT_USER:
+      return merge({}, state, {currentUser: action.targetUser}, {targetUser: action.targetUser});
     case RECEIVE_ERRORS:
-      return merge({}, defaultState, {errors: action.errors});
+      return merge({}, state, {errors: action.errors});
     default:
       return state;
   }

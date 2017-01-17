@@ -10,22 +10,26 @@ class PostIndex extends React.Component {
   }
 
 	componentDidMount() {
-		// debugger;
 		this.props.fetchUser(this.props.targetUserId).then( (action) => {
-			// debugger;
-			this.props.fetchPosts(action.targetUser); //.then((user) => console.log(user))
-		}
+			this.props.fetchPosts();
+			}
 		);
 	}
 
 	componentWillReceiveProps(newProps) {
-		// debugger;
+
 		if (newProps.targetUserId != this.props.targetUserId) {
 			this.props.fetchUser(newProps.targetUserId).then( (action) => {
-				this.props.fetchPosts(action.targetUser); //.then((user) => console.log(user))
-			}
-		);
+				this.props.fetchPosts();
+				}
+			);
 		}
+	}
+
+	selectPosts(posts) {
+		return (
+			posts.filter( (post) => (`${post.user_id}` === this.props.targetUserId) )
+		);
 	}
 
 	fillerPost(allPosts) {
@@ -49,7 +53,7 @@ class PostIndex extends React.Component {
 		return (
       <div className="profile-div-row">
 				<ProfileHeader user={this.props.targetUser} />
-				{this.props.posts.map( (post) => <PostIndexItem post={post} /> )}
+				{this.selectPosts(this.props.posts).map( (post) => <PostIndexItem post={post} /> )}
 				{this.fillerPost(this.props.posts)}
       </div>
     );

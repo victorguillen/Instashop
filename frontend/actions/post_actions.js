@@ -31,6 +31,12 @@ export const fetchPosts = (user) => dispatch => (
   )
 );
 
+export const fetchPost = (user) => dispatch => (
+  ApiUtil.fetchPost(user).then( posts => dispatch(receivePost(posts)),
+    errors => dispatch(receivePost(errors))
+  )
+);
+
 export const createPost = (post) => dispatch => (
   ApiUtil.createPost(post).then( post1 => dispatch(receivePost(post1)),
     errors => dispatch(receiveErrors(errors))

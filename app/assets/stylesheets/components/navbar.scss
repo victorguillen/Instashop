@@ -10,7 +10,7 @@
 }
 
 .img-login-nav {
-  width: 100px;
+  width: 120px;
 	height: 40px;
   padding-right: 20px;
 }
@@ -31,8 +31,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 315px;
-  height: 28px;
+  background: $grey;
+  border-radius: 3px;
+  color: $light-grey;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  font-weight: lighter;
+  border: 1px solid #dbdbdb;
+  width: 210px;
+  height: 26px;
 }
 
 .icon-cont-wrapper {

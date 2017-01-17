@@ -10,29 +10,61 @@
   display: flex;
   flex-flow: row;
   align-items: center;
-  width: 291px;
+  margin-right: 50px;
+  margin-left: 75px;
   height: 152px;
 }
 
 .profile-header-h1 {
-  width: 270px;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
   height: 40px;
+  font-family: "Avenir Next";
+  font-size: 34px;
+
 }
 
 .profile-header-h2 {
   width: 102px;
   height: 19px;
+  font-family: $sans-serif;
+  font-size: 14px;
+  font-weight: bold;
 }
+
+.post-followers {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  // margin-left: 5px;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  font-weight: normal;
+}
+
 
 .profile-stats {
   display: flex;
   flex-flow: row;
-  width: 613px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  // width: 613px;
   height: 17px;
 
 }
 
 .profile-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  font-family: $sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: $light-grey;
+  margin-right: 10px;
   width: 101px;
   height: 31px;
 }
@@ -40,6 +72,8 @@
 .stat-top-container {
   display: flex;
   flex-flow: row;
+  align-items: center;
+  justify-content: flex-start;
   width: 494px;
   height: 40px;
 }
@@ -48,7 +82,8 @@
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-  width: 494px;
+  justify-content: space-around;
+  // width: 494px;
   height: 152px;
 }
 

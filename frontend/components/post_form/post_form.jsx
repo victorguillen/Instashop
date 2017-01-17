@@ -33,39 +33,41 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <div className="login-box">
-				<form onSubmit={this.handleSubmit}>
-					<input type="text"
-						placeholder="Image Url"
-						onChange={this.update("image_url")}
-						className="input-post"
-						/>
-					<br/>
-					<input type="text"
-						placeholder="Item Url"
-						onChange={this.update("item_url")}
-						className="input-post"
-						/>
-					<br/>
-					<input type="text"
-						placeholder="Gender"
-						onChange={this.update("password")}
-						className="input-post"
-						/>
-					<br/>
-					<input type="text"
-						placeholder="Price"
-						onChange={this.update("price")}
-						className="input-post"
-						/>
-					<br/>
-					<input type="text"
-						placeholder="Caption"
-						onChange={this.update("caption")}
-						className="input-post"
-						/>
-					<input type="submit" value="Add Item" className="button-session" />
-				</form>
+      <div className="form-div">
+				<div className="upload-div">
+					<form onSubmit={this.handleSubmit}>
+						<input type="text"
+							placeholder="Image Url"
+							onChange={this.update("image_url")}
+							className="input-post"
+							/>
+						<br/>
+						<input type="text"
+							placeholder="Item Url"
+							onChange={this.update("item_url")}
+							className="input-post"
+							/>
+						<br/>
+						<input type="text"
+							placeholder="Gender"
+							onChange={this.update("password")}
+							className="input-post"
+							/>
+						<br/>
+						<input type="text"
+							placeholder="Price"
+							onChange={this.update("price")}
+							className="input-post"
+							/>
+						<br/>
+						<input type="text"
+							placeholder="Caption"
+							onChange={this.update("caption")}
+							className="input-post"
+							/>
+						<input type="submit" value="Add Item" className="button-session" />
+					</form>
+				</div>
       </div>
     );
   }

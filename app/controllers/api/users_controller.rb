@@ -21,14 +21,19 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by_id(params[:id])
-    new_url = Cloudinary::Uploader.upload(@user.image_url, :upload_preset => 'profile_picture')
-    @user['image_url'] = new_url['secure_url']
+
+    @user = User.find_by(username: params[:user][:username])
+    
+    if @user.update(user_params)
+      render "api/users/show"
+    else
+      render json: ["Invalid Could not update profile."], status: 422
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :full_name, :email)
+    params.require(:user).permit(:username, :password, :full_name, :email, :bio, :image_url)
   end
 end
