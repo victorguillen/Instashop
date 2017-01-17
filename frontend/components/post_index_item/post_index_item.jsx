@@ -79,7 +79,7 @@ class PostIndexItem extends React.Component {
             </div>
 						<div className="modal-want-buy-container">
 							<button className="modal-want" onClick="">Want</button>
-							<button className="modal-buy" onClick="">Buy</button>
+							<button className="modal-buy" onClick={this.openLink(this.post.item_url)}>Buy</button>
 						</div>
             <div className='modal-comment-box'>
               {this.comments}
