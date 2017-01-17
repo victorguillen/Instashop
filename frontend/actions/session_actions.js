@@ -15,18 +15,19 @@ export const receiveErrors = (errors) => ({
 
 export const signup = (user) => dispatch => (
   ApiUtil.signup(user).then( user1 => dispatch(receiveCurrentUser(user1)),
-    errors => dispatch(receiveErrors(errors))
+    errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
 
 export const login = (user) => dispatch => (
-  ApiUtil.login(user).then( user1 => dispatch(receiveCurrentUser(user1))
+  ApiUtil.login(user).then( user1 => dispatch(receiveCurrentUser(user1)),
+  errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );
 
 
 export const logout = () => dispatch => (
   ApiUtil.logout().then( (user) => dispatch(receiveCurrentUser(null)),
-    errors => dispatch(receiveErrors(errors))
+    errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );

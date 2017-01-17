@@ -5,10 +5,10 @@ export const preloadedState = () => (
     session: {
       currentUser: window.currentUser,
       errors: [],
-    },
-    profile: {
-      posts: {},
-      errors: []
     }
+    // profile: {
+    //   posts: {},
+    //   errors: []
+    // }
   })
 );

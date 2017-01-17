@@ -9,6 +9,7 @@ import NavBar from './navbar/navbar_container';
 import PostIndexContainer from './post/post_index_container'; //Feed
 import PostForm from './post_form/post_form_container';
 import Profile from './profile/profile_container';
+import Edit from './edit_form/edit_form_container';
 
 const Root = ({ store }) => {
 
@@ -35,6 +36,7 @@ const _redirectIfLoggedIn = (nextState, replace) => {
           <IndexRoute component={ PostIndexContainer }  />
           <Route path="/post" component={ PostForm }  />
           <Route path="/users/:id" component={ Profile }  />
+          <Route path="/edit" component={ Edit }  />
         </Route>
         <Route path="login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />

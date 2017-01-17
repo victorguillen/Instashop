@@ -1,18 +1,19 @@
 class Api::SessionsController < ApplicationController
 
   def create
-
+    # debugger;
     @user = User.find_by_credentials(
       params[:user][:username], params[:user][:password]
     )
-
-    if @user
-
+    # debugger;
+    if @user.class != String
+      # debugger;
       login(@user)
 
       render "api/users/show"
     else
-      render json: ["Invalid username/password"], status: 401
+      render json: [@user],
+        status: 401
     end
   end
 
@@ -24,7 +25,7 @@ class Api::SessionsController < ApplicationController
       session[:session_token] = nil
       render "api/users/show"
     else
-      render json: ["Nobody signed in"], status: 404
+      render json: ["Paceholder Nobody signed in"], status: 404
     end
   end
 end

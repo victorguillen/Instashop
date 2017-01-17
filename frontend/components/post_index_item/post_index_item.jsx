@@ -6,7 +6,7 @@ class PostIndexItem extends React.Component {
 	constructor(props) {
 		super(props);
     this.openLink = this.openLink.bind(this);
-    this.post = this.props.post;
+    // this.post = this.props.post;
 		this.state = { modalOpen: false };
     this.handleClick = this.handleClick.bind(this);
     this.modalClose = this.modalClose.bind(this);
@@ -23,6 +23,7 @@ class PostIndexItem extends React.Component {
   }
 
   modalClose() {
+
     this.setState({modalOpen: false});
     modal.content.opacity = 0;
   }
@@ -33,6 +34,12 @@ class PostIndexItem extends React.Component {
 		);
 	}
 
+  profile(){
+    // if () hashHistory === /users/1
+    // <profile header>
+
+  }
+
   comments(){
     return (
       <textarea className='modal-comments'>
@@ -42,7 +49,7 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
-
+		this.post = this.props.post;
     return(
       <div className="post-div" onClick={this.handleClick}>
         {this.profile}
@@ -52,7 +59,7 @@ class PostIndexItem extends React.Component {
           onAfterOpen={this.onModalOpen}
           onRequestClose={this.modalClose}
           closeTimeoutMS={200}
-          conentLabel="Modal"
+          contentLabel="Modal"
           style={modal}
         >
         <div className="modal-post">

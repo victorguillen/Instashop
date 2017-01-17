@@ -4,17 +4,15 @@ import PostIndexContainer from '../post/post_index_container';
 class Profile extends React.Component {
 	constructor(props) {
 		super(props);
+		this.targetId = this.props.targetUser || this.props.currentUser.id;
   }
 
-
-	componentDidMount() {
-		this.props.getPosts(this.props.currentUser);
-	}
-
   render() {
+		this.targetId = this.props.targetUser || this.props.currentUser.id;
+		// console.log(this.targetId);
     return (
 			<div>
-				<PostIndexContainer />
+				<PostIndexContainer targetUser={this.targetId}/>
 			</div>
     );
   }

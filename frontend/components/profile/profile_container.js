@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
-import { getPosts } from '../../actions/profile_actions';
+// import { fetchUser } from '../../actions/user_actions';
 import Profile from './profile';
 import {listPosts} from '../../reducers/selectors';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  
   return ({
     currentUser: state.session.currentUser,
-    posts: listPosts(state)
+    targetUser: ownProps.params.id
   });
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getPosts: user => dispatch(getPosts(user))
+  // fetchUser: user => dispatch(fetchUser(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

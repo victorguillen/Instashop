@@ -66,6 +66,8 @@ class NavBarForm extends React.Component {
 							className="icons"
 							/>
 					</div>
+					<Link to="/users/2">user 2</Link>
+					<Link to="/users/1">user 1</Link>
 				</div>
       </div>
     );

@@ -1,17 +1,18 @@
-import { RECEIVE_POSTS, RECEIVE_ERRORS } from "../actions/profile_actions";
+import { RECEIVE_USER, RECEIVE_ERRORS } from "../actions/user_actions";
 
 
 import merge from 'lodash/merge';
 const defaultState = {
-  posts: {},
+  targetUser: {},
   errors: []
 };
 
-export const ProfileReducer = (state = defaultState, action) => {
+export const UserReducer = (state = defaultState, action) => {
   Object.freeze(state);
+
   switch (action.type) {
-    case RECEIVE_POSTS:
-      return merge({}, defaultState, {posts: action.posts});
+    case RECEIVE_USER:
+      return merge({}, defaultState, {targetUser: action.targetUser});
     case RECEIVE_ERRORS:
       return merge({}, defaultState, {errors: action.errors});
     default:

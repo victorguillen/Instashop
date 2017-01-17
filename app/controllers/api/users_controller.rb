@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
+    @user['image_url'] = "http://res.cloudinary.com/duovuuybb/image/upload/b_rgb:fafafa,bo_1px_solid_rgb:000,c_scale,h_150,r_76,w_150/v1484187228/logo_sfg8oq.png"
     if @user.save
       login(@user)
       render "api/users/show"
@@ -11,7 +11,19 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find_by_id(params[:id])
+    if @user
+      render "api/users/show"
+    else
+      render json: ["Invalid User not found."], status: 422
+    end
+  end
+
   def update
+    @user = User.find_by_id(params[:id])
+    new_url = Cloudinary::Uploader.upload(@user.image_url, :upload_preset => 'profile_picture')
+    @user['image_url'] = new_url['secure_url']
   end
 
   private

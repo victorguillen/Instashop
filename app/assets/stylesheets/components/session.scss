@@ -114,3 +114,20 @@
   margin-top: 6px;
   margin-bottom: 0px;
 }
+
+.errors {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  // flex-wrap: wrap;
+  max-width: 250px;
+  color: red;
+  font-family: $sans-serif;
+	font-size: 11px;
+}
+
+.error-li {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

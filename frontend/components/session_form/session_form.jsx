@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
 		this.state.username = "kuro";
 		this.state.password = "kuroneko";
 		const user = this.state;
+		// debugger;
 		this.props.processForm({user}).then(() => this.props.router.push("/"));
 	}
 
@@ -55,19 +56,26 @@ class SessionForm extends React.Component {
 
 
 	renderErrors() {
+		// debugger;
 		return(
-			<ul>
-				{this.props.errors.map((error, i) => (
-					<li>
-						{error}
-					</li>
-				))}
-			</ul>
+			<div className="errors">
+				<ul>
+					{ this.props.errors.map((errors, i) =>{
+						errors.split("").unshift;
+						return (
+							<li key={i} className="error-li">
+								{errors.split(" ").slice(1).join(" ")}
+							</li>
+						);
+					}
+					)}
+				</ul>
+			</div>
 		);
 	}
 
 	render() {
-
+		// debugger;
 		return (
 			<div className="login-box">
 				<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484204524/iphone_iaml6n.png" className="img-login" />
@@ -75,7 +83,7 @@ class SessionForm extends React.Component {
 					<div className="login-div">
 						<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484187232/insta_logo_re5hwe.png" className="img-logo" />
 						<form onSubmit={this.handleSubmit}>
-							{this.renderErrors()}
+
 
 							<div>
 								<input type="text"
@@ -96,12 +104,17 @@ class SessionForm extends React.Component {
 							</div>
 
 							<div className="or-div">-------- OR --------</div>
-							<input type="button" value="Guest Login" onClick={this.guestLogin} className="button-session" />
+							<input
+								type="button"
+								value="Guest Login"
+								onClick={this.guestLogin}
+								className="button-session"
+							/>
+							{this.renderErrors()}
 						</form>
 					</div>
 					<div className="bottom-div">
 						{this.navLink()}
-
 					</div>
 				</div>
 			</div>

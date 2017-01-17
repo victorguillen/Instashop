@@ -1,8 +1,14 @@
 class User < ActiveRecord::Base
 
-  validates :username, presence: true, uniqueness: true
+  validates :username,
+    uniqueness: { message: "Sorry, that username is taken." },
+    presence: { message: "Username is required" }
   validates :password_digest, :session_token, presence: true
-  validates :password, length: { minimum: 6, allow_nil: true }
+  validates :password, length: {
+    minimum: 6,
+    allow_nil: true,
+    message: "Create a password at least 6 characters long."
+  }
   # validates :full_name, :email, presence: true
 
   attr_reader :password
@@ -16,9 +22,14 @@ class User < ActiveRecord::Base
   has_many :follows
 
   def self.find_by_credentials(user, password)
+    user_err = "Invalid The username you entered doesn't belong to
+      an account. Please check your username and try again."
+    pass_err = "Invalid Sorry, your password was incorrect.
+      Please double-check your password."
+      # debugger;
     current_user = User.find_by(username: user)
-    return nil unless current_user
-    current_user.is_password?(password) ? current_user : nil
+    return user_err unless current_user
+    current_user.is_password?(password) ? current_user : pass_err
   end
 
   def password=(password)

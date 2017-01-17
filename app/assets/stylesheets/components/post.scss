@@ -45,9 +45,10 @@
   cursor: pointer;
 }
 
-.feed-div-row {
+.profile-div-row {
   display: flex;
   flex-wrap: wrap;
+
   justify-content: flex-start;
   align-items: flex-start;
   max-width: 1000px;
@@ -116,4 +117,10 @@
 .modal-comments {
   width: 216px;
   height: 20px;
+}
+
+.filler {
+  width: 293px;
+  height: 293px;
+  margin: 20px;
 }
