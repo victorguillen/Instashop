@@ -5,6 +5,8 @@ json.partial! "api/users/user", user: @user
     json.set! follower.id do
       json.username follower.username
       json.image_url follower.image_url
+      json.posts follower.posts
+      json.id follower.id
     end
   end
 end
@@ -14,6 +16,8 @@ end
     json.set! followed_user.id do
       json.username followed_user.username
       json.image_url followed_user.image_url
+      json.posts followed_user.posts
+      json.id followed_user.id
     end
   end
 end

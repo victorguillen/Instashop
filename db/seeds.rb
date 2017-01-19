@@ -50,7 +50,7 @@ User.create({
   username: "elo-elo",
   full_name: "Eloisa L.",
   email: "eloisa@gmail.com",
-  image_url: "",
+  image_url: "http://res.cloudinary.com/duovuuybb/image/upload/v1484680632/profile_pics/t3putnysrp659c3vjxnl.png",
   bio: "^_^",
   password: "password"
 });

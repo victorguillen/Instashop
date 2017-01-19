@@ -49,7 +49,7 @@ class PostIndexItem extends React.Component {
 	}
 
 	belongsToUser() {
-
+		
 			if (this.post.user_id === this.props.user.id) {
 				return true;
 			} else {
@@ -82,7 +82,7 @@ class PostIndexItem extends React.Component {
 // refactor modal out of this render, move to own file
   render() {
 
-		if (this.props.user) {
+		// if (this.props.user) {
 
 			this.post = this.props.post;
 			return(
@@ -131,9 +131,9 @@ class PostIndexItem extends React.Component {
 
 				</div>
 			);
-		} else {
-			return <div></div> ;
-		}
+		// } else {
+		// 	return <div></div> ;
+		// }
   }
 }
 

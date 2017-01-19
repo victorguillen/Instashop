@@ -9,13 +9,14 @@ class ProfileHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = { followModalOpen: false, followInfo: [] };
+
     this.modalClose = this.modalClose.bind(this);
     this.followEditToggle = this.followEditToggle.bind(this);
     this.followClick = this.followClick.bind(this);
     this.followerClick = this.followerClick.bind(this);
   }
 
-  componentDidMount() {
+  componentReceivedProps() {
     this.props.fetchTargetUser(this.props.targetUser.id);
   }
 
@@ -24,14 +25,14 @@ class ProfileHeader extends React.Component {
 
   followClick(follows) {
     this.setState({followInfo: follows});
-    console.log(this.state.followInfo);
+
     this.setState({followModalOpen: true});
 
   }
 
   followerClick(followers) {
     this.setState({followInfo: followers});
-    console.log(this.state.followInfo);
+
     this.setState({followModalOpen: true});
   }
 
@@ -87,9 +88,9 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    if(this.props.targetUser.id && this.props.currentUser) {
+    // if(this.props.targetUser.id && this.props.currentUser) {
       // debugger;
-
+      // console.log(this.props.targetUser);
       return (
         <div className="profile-container">
           <div className="profile-pic-container">
@@ -123,12 +124,12 @@ class ProfileHeader extends React.Component {
           </Modal>
         </div>
       );
-    } else {
-      return (
-
-        <div></div>
-      );
-    }
+    // } else {
+    //   return (
+    //
+    //     <div></div>
+    //   );
+    // }
 
   }
 }

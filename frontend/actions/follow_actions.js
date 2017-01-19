@@ -1,22 +1,22 @@
 import * as ApiUtil from "../util/follow_api_util";
 
 
-export const FOLLOW = "FOLLOW";
-export const UNFOLLOW = "UNFOLLOW";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const FOLLOW_REDUCER_FOLLOW = "FOLLOW_REDUCER_FOLLOW";
+export const FOLLOW_REDUCER_UNFOLLOW = "FOLLOW_REDUCER_UNFOLLOW";
+export const FOLLOW_REDUCER_RECEIVE_ERRORS = "FOLLOW_REDUCER_RECEIVE_ERRORS";
 
 export const followUser = (currentUser) => ({
-  type: FOLLOW,
+  type: FOLLOW_REDUCER_FOLLOW,
   currentUser
 });
 
 export const unfollowUser = (currentUser) => ({
-  type: UNFOLLOW,
+  type: FOLLOW_REDUCER_UNFOLLOW,
   currentUser
 });
 
 export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+  type: FOLLOW_REDUCER_RECEIVE_ERRORS,
   errors
 });
 

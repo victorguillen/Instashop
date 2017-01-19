@@ -1,27 +1,27 @@
 import * as ApiUtil from "../util/post_api_util";
 
-export const RECEIVE_POSTS = "RECEIVE_POSTS";
-export const RECEIVE_POST = "CREATE_POST";
-export const REMOVE_POST = "REMOVE_POST";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const POST_REDUCER_RECEIVE_POSTS = "POST_REDUCER_RECEIVE_POSTS";
+export const POST_REDUCER_RECEIVE_POST = "POST_REDUCER_RECEIVE_POST";
+export const POST_REDUCER_REMOVE_POST = "POST_REDUCER_REMOVE_POST";
+export const POST_REDUCER_RECEIVE_ERRORS = "POST_REDUCER_RECEIVE_ERRORS";
 
 export const receivePosts = (posts) => ({
-  type: RECEIVE_POSTS,
+  type: POST_REDUCER_RECEIVE_POSTS,
   posts
 });
 
 export const receivePost = (post) => ({
-  type: RECEIVE_POST,
+  type: POST_REDUCER_RECEIVE_POST,
   post
 });
 
 export const removePost = (post) => ({
-  type: REMOVE_POST,
+  type: POST_REDUCER_REMOVE_POST,
   post
 });
 
 export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+  type: POST_REDUCER_RECEIVE_ERRORS,
   errors
 });
 

@@ -1,33 +1,27 @@
-import { RECEIVE_USER, RECEIVE_ERRORS, UPDATE_CURRENT_USER } from "../actions/user_actions";
-import { FOLLOW, UNFOLLOW } from "../actions/follow_actions";
+import { USER_REDUCER_RECEIVE_USER, USER_REDUCER_UPDATE_CURRENT_USER, USER_REDUCER_RECEIVE_ERRORS } from "../actions/user_actions";
+import { FOLLOW_REDUCER_FOLLOW, FOLLOW_REDUCER_UNFOLLOW, FOLLOW_REDUCER_RECEIVE_ERRORS } from "../actions/follow_actions";
 
 
 import merge from 'lodash/merge';
 const defaultState = {
-  user: {},
-  targetUser: {
-    bio: "",
-    email: "",
-    full_name: "",
-    id: 0,
-    image_url: "",
-    post_count: 0,
-    username: "",
-  },
-  errors: []
+  targetUser: {},
+  user_errors: [],
+  follow_errors: []
 };
 
 export const UserReducer = (state = defaultState, action) => {
   // debugger;
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_USER:
+    case USER_REDUCER_RECEIVE_USER:
       return merge({}, state, {targetUser: action.targetUser});
-    case UPDATE_CURRENT_USER:
+    case USER_REDUCER_UPDATE_CURRENT_USER:
       return merge({}, state, {currentUser: action.targetUser}, {targetUser: action.targetUser});
-    case RECEIVE_ERRORS:
-      return merge({}, state, {errors: action.errors});
-    case FOLLOW:
+    case USER_REDUCER_RECEIVE_ERRORS:
+      return merge({}, state, {user_errors: action.errors});
+    case FOLLOW_REDUCER_RECEIVE_ERRORS:
+      return merge({}, state, {follow_errors: action.errors});
+    case FOLLOW_REDUCER_FOLLOW:
     // return state;
       return merge({}, state,
         {targetUser: {
@@ -38,7 +32,7 @@ export const UserReducer = (state = defaultState, action) => {
           }
         }
       }});
-    case UNFOLLOW:
+    case FOLLOW_REDUCER_UNFOLLOW:
       let newState = merge({}, state);
       delete newState.targetUser.followers[action.currentUser.id];
       return newState;

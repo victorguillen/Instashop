@@ -1,21 +1,21 @@
 import * as ApiUtil from "../util/user_api_util";
 
-export const RECEIVE_USER = "RECEIVE_USER";
-export const UPDATE_CURRENT_USER = "UPDATE_CURRENT_USER";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const USER_REDUCER_RECEIVE_USER = "USER_REDUCER_RECEIVE_USER";
+export const USER_REDUCER_UPDATE_CURRENT_USER = "USER_REDUCER_UPDATE_CURRENT_USER";
+export const USER_REDUCER_RECEIVE_ERRORS = "USER_REDUCER_RECEIVE_ERRORS";
 
 export const receiveUser = (targetUser) => ({
-  type: RECEIVE_USER,
+  type: USER_REDUCER_RECEIVE_USER,
   targetUser
 });
 
 export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
+  type: USER_REDUCER_RECEIVE_ERRORS,
   errors
 });
 
 export const updateStateUser = (targetUser) => ({
-  type: UPDATE_CURRENT_USER,
+  type: USER_REDUCER_UPDATE_CURRENT_USER,
   targetUser
 });
 

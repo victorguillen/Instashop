@@ -6,9 +6,5 @@ export const preloadedState = () => (
       currentUser: window.currentUser,
       errors: [],
     }
-    // profile: {
-    //   posts: {},
-    //   errors: []
-    // }
   })
 );

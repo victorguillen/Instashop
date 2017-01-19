@@ -51,17 +51,17 @@ class PostIndex extends React.Component {
 
   render() {
 
-		if (this.props.posts.length > 0) {
+		// if (this.props.posts.length > 0) {
 			return (
 				<div className="profile-div-row">
 					<ProfileHeader user={this.props.targetUser} />
-					{this.selectPosts(this.props.posts).map( (post) => <PostIndexItem post={post} /> )}
+					{this.selectPosts(this.props.posts).map( (post) => <PostIndexItem post={post} key={post.id} /> )}
 					{this.fillerPost(this.props.posts)}
 				</div>
 			);
-		} else {
-			return <div></div>;
-		}
+		// } else {
+		// 	return <div></div>;
+		// }
   }
 }
 

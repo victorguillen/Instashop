@@ -9,25 +9,26 @@ class FollowPopup extends React.Component {
   }
 
   link(linkId) {
-    // debugger;
+
     return `/users/${linkId}`;
   }
 
   render() {
-    if(this.props.follows[0].posts) {
+    console.log(this.props.follows);
+    if(this.props.follows.length > 1) {
 
       let follows = this.props.follows.filter( (follow) => (follow.username != "default"));
 
       return (
         <div className="main-follow-container">
           {follows.map( (follow) =>
-            <div className="follow-user-container">
+            <div className="follow-user-container" >
               <div className="follow-profile-container">
                 <img src={follow.image_url} className="follow-profile-img" />
                 <Link to={this.link(follow.id)} className="username-link" >{follow.username}</Link>
               </div>
               <div className="img-follow-container">
-                { follow.posts.map(  (post) => <PostIndexItem post={post} followCSS={{img: "follow-post-img", div: "img-index-div"}} /> )}
+                { follow.posts.map(  (post) => <PostIndexItem key={post.id} post={post} followCSS={{img: "follow-post-img", div: "img-index-div"}} /> )}
               </div>
             </div>
           )}

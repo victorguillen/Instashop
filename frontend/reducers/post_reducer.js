@@ -1,4 +1,4 @@
-import { RECEIVE_POSTS, RECEIVE_POST, REMOVE_POST, RECEIVE_ERRORS } from "../actions/post_actions";
+import { POST_REDUCER_RECEIVE_POSTS, POST_REDUCER_RECEIVE_POST, POST_REDUCER_REMOVE_POST, POST_REDUCER_RECEIVE_ERRORS } from "../actions/post_actions";
 
 
 import merge from 'lodash/merge';
@@ -11,19 +11,19 @@ const defaultState = {
 export const PostReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_POSTS:
+    case POST_REDUCER_RECEIVE_POSTS:
       return merge({}, defaultState, {posts: action.posts});
-    case RECEIVE_POST:
+    case POST_REDUCER_RECEIVE_POST:
       return merge({}, state, {
         posts: {
           [action.post.id]: action.post
         }
       });
-    case REMOVE_POST:
+    case POST_REDUCER_REMOVE_POST:
       let newState = merge({}, state);
       delete newState.posts[action.post.id];
       return newState;
-    case RECEIVE_ERRORS:
+    case POST_REDUCER_RECEIVE_ERRORS:
       return merge({}, defaultState, {errors: action.errors});
     default:
       return state;
