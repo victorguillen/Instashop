@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 import PostIndexItem from '../post_index_item/post_index_item_container';
-import ProfileHeader from '../profile/profile_header';
+import ProfileHeader from '../profile/profile_header_container';
 
 
 class PostIndex extends React.Component {
@@ -50,13 +50,18 @@ class PostIndex extends React.Component {
 	}
 
   render() {
-		return (
-      <div className="profile-div-row">
-				<ProfileHeader user={this.props.targetUser} />
-				{this.selectPosts(this.props.posts).map( (post) => <PostIndexItem post={post} /> )}
-				{this.fillerPost(this.props.posts)}
-      </div>
-    );
+
+		if (this.props.posts.length > 0) {
+			return (
+				<div className="profile-div-row">
+					<ProfileHeader user={this.props.targetUser} />
+					{this.selectPosts(this.props.posts).map( (post) => <PostIndexItem post={post} /> )}
+					{this.fillerPost(this.props.posts)}
+				</div>
+			);
+		} else {
+			return <div></div>;
+		}
   }
 }
 

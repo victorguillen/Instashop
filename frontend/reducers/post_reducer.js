@@ -16,13 +16,13 @@ export const PostReducer = (state = defaultState, action) => {
     case RECEIVE_POST:
       return merge({}, state, {
         posts: {
-          [action.post.id]: action.post 
+          [action.post.id]: action.post
         }
       });
     case REMOVE_POST:
-      let newState = state;
-      delete newState[action.post.id];
-      return merge({}, newState);
+      let newState = merge({}, state);
+      delete newState.posts[action.post.id];
+      return newState;
     case RECEIVE_ERRORS:
       return merge({}, defaultState, {errors: action.errors});
     default:

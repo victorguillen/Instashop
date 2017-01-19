@@ -11,6 +11,7 @@ import PostForm from './post_form/post_form_container';
 import Profile from './profile/profile_container';
 import Edit from './edit_form/edit_form_container';
 import Feed from './feed/feed_container';
+import ProfileHeader from './profile/profile_header_container';
 
 const Root = ({ store }) => {
 

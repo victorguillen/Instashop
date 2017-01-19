@@ -84,6 +84,21 @@
   height: 31px;
 }
 
+.follow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  font-family: $sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: $light-grey;
+  margin-right: 10px;
+  width: 101px;
+  height: 31px;
+}
+
 .stat-top-container {
   display: flex;
   flex-flow: row;

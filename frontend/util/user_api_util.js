@@ -12,3 +12,13 @@ export const updateUser = (userData) => (
     data: userData
   })
 );
+
+
+
+export const fetchTargetUser = (userId) => (
+  $.ajax({
+    method: "GET",
+    url: `/api/users/target`,
+    data: { id: userId }
+  })
+);

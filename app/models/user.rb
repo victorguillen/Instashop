@@ -9,17 +9,30 @@ class User < ActiveRecord::Base
     allow_nil: true,
     message: "Create a password at least 6 characters long."
   }
-  # validates :full_name, :email, presence: true
 
   attr_reader :password
 
   after_initialize :ensure_session_token
 
   has_many :posts
+
   has_many :comments
-  has_many :likes
-  has_many :followers
-  has_many :follows
+
+  has_many :follows,
+  class_name: "Follow",
+  foreign_key: :followed_id
+
+  has_many :followers,
+    through: :follows,
+    source: :follower
+
+  has_many :followed_users,
+  through: :followings,
+  source: :followed_user
+
+  has_many :followings,
+  class_name: "Follow",
+  foreign_key: :follower_id
 
   def self.find_by_credentials(user, password)
     user_err = "Invalid The username you entered doesn't belong to

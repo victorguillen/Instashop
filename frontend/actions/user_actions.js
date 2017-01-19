@@ -30,3 +30,9 @@ export const updateUser = (newUserData) => dispatch => (
     errors => dispatch(receiveErrors(errors))
   )
 );
+
+export const fetchTargetUser = (userId) => dispatch => (
+  ApiUtil.fetchTargetUser(userId).then( targetUser => dispatch(receiveUser(targetUser)),
+    errors => dispatch(receiveErrors(errors))
+  )
+);

@@ -3,7 +3,9 @@ import {RECEIVE_ERRORS} from "../actions/session_actions";
 import merge from 'lodash/merge';
 
 const _nullUser = Object.freeze({
-  currentUser: null,
+  currentUser: {
+    id: 1
+  },
   errors: []
 });
 

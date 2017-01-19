@@ -9,7 +9,7 @@ class Profile extends React.Component {
 
   render() {
 		this.targetId = this.props.targetUser || this.props.currentUser.id;
-		// console.log(this.targetId);
+		
     return (
 			<div>
 				<PostIndexContainer targetUser={this.targetId}/>

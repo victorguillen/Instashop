@@ -32,7 +32,7 @@ class Feed extends React.Component {
       <div className="feed">
         {posts.map( (post) => {
 					return (
-						<div className="feed-post">
+						<div key={post.id} className="feed-post">
 							<img
 								src={post.user_image_url}
 								className="feed-img"

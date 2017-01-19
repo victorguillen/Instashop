@@ -23,11 +23,21 @@ class Api::UsersController < ApplicationController
   def update
 
     @user = User.find_by(username: params[:user][:username])
-    
+
     if @user.update(user_params)
       render "api/users/show"
     else
       render json: ["Invalid Could not update profile."], status: 422
+    end
+  end
+
+  def target
+    # debugger;
+    @user = User.find_by_id(params[:id])
+    if @user
+      render "api/users/target"
+    else
+      render json: ["Invalid User not found."], status: 422
     end
   end
 

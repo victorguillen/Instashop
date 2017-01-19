@@ -26,4 +26,9 @@
  @import "base/grid.scss";
 
  // Components
- @import "components/*";
+ // @import "components/*";
+ @import "components/main.scss";
+ @import "components/navbar.scss";
+ @import "components/post.scss";
+ @import "components/profile_header.scss";
+ @import "components/session.scss";

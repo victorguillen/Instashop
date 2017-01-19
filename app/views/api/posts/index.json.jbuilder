@@ -5,6 +5,7 @@
    json.price post.price
    json.user_id post.user_id
    json.caption post.caption
+   json.id post.id
    json.user_image_url post.user.image_url
  end
 end
