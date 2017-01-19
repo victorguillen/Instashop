@@ -49,7 +49,7 @@ class PostIndexItem extends React.Component {
 	}
 
 	belongsToUser() {
-		
+
 			if (this.post.user_id === this.props.user.id) {
 				return true;
 			} else {
@@ -124,7 +124,7 @@ class PostIndexItem extends React.Component {
 								<div className='modal-comment-box'>
 									{this.comments}
 								</div>
-								<input type="text" value="   Add a comment"  className="modal-comments" />
+								<input type="text" placeholder={"   Add a comment"} value="" className="modal-comments" />
 							</div>
 						</div>
 					</Modal>
