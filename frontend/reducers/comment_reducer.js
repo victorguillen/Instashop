@@ -9,6 +9,7 @@ const defaultState = {
 };
 
 export const CommentReducer = (state = defaultState, action) => {
+  // debugger;
   Object.freeze(state);
   switch (action.type) {
     case COMMENT_REDUCER_RECEIVE_COMMENTS:

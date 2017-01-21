@@ -3,6 +3,12 @@ import * as ApiUtil from "../util/user_api_util";
 export const USER_REDUCER_RECEIVE_USER = "USER_REDUCER_RECEIVE_USER";
 export const USER_REDUCER_UPDATE_CURRENT_USER = "USER_REDUCER_UPDATE_CURRENT_USER";
 export const USER_REDUCER_RECEIVE_ERRORS = "USER_REDUCER_RECEIVE_ERRORS";
+export const USER_REDUCER_RECEIVE_USERS = "USER_REDUCER_RECEIVE_USERS";
+
+export const receiveUsers = (users) => ({
+  type: USER_REDUCER_RECEIVE_USERS,
+  users
+});
 
 export const receiveUser = (targetUser) => ({
   type: USER_REDUCER_RECEIVE_USER,
@@ -18,6 +24,13 @@ export const updateStateUser = (targetUser) => ({
   type: USER_REDUCER_UPDATE_CURRENT_USER,
   targetUser
 });
+
+export const fetchUsers = () => dispatch => (
+  ApiUtil.fetchUsers().then( targetUser => dispatch(receiveUsers(targetUser)),
+    errors => dispatch(receiveErrors(errors))
+  )
+);
+
 
 export const fetchUser = (userId) => dispatch => (
   ApiUtil.fetchUser(userId).then( targetUser => dispatch(receiveUser(targetUser)),

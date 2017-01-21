@@ -1,6 +1,7 @@
 @import "base/fonts.scss";
 @import "base/colors.scss";
 
+
 .profile-pic {
   width: 150px;
   height: 150px;
@@ -11,7 +12,7 @@
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
-  width: 200px;
+  width: 300px;
 }
 
 .profile-pic-container {
@@ -34,17 +35,24 @@
 }
 
 .profile-header-h2 {
-  // width: 100px;
+  // width: 100%;
   // height: 19px;
+
   font-family: $sans-serif;
   font-size: 16px;
   font-weight: lighter;
   padding-right: 10px;
   border-right: 1px solid grey;
+
 }
 
 .bio-p {
+  display: flex;
+  flex-wrap: wrap;
   margin-left: 10px;
+  width: 100%;
+  font-size: 13px;
+  // length: 200px;
 }
 
 .post-followers {

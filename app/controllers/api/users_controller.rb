@@ -1,9 +1,24 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    render "api/users/index"
+  end
+
   def create
+    @editor = User.find_by(username: "Editor")
     @user = User.new(user_params)
     @user['image_url'] = "http://res.cloudinary.com/duovuuybb/image/upload/b_rgb:fafafa,bo_1px_solid_rgb:000,c_scale,h_150,r_76,w_150/v1484187228/logo_sfg8oq.png"
+# debugger
     if @user.save
+      if @editor && @user
+        # debugger
+        @follow = Follow.new(follower_id: @user.id, followed_id: @editor.id)
+        if @follow
+          # debugger
+          @follow.save
+        end
+      end
       login(@user)
       render "api/users/show"
     else

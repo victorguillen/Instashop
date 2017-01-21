@@ -1,5 +1,6 @@
 class Api::CommentsController < ApplicationController
   def create
+    # debugger;
     @comment = Comment.new(comment_params)
     if @comment.save
       render "api/comments/show"
@@ -9,7 +10,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by(id: params(:id))
+    @comment = Comment.find_by_id(params[:id])
     if @comment
       @comment.destroy
       render "api/comments/show"
@@ -19,13 +20,18 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.find_by(post_id: params(:post_id))
+    @temp_comments = Comment.all
+    @comments = @temp_comments.select { |comment|
+      comment.post_id == params[:id].to_i
+      # debugger;
+    }
+    # debugger;
   end
 
   # def show
   # end
 
   def comment_params
-    params.require(:comment).permit(:user_id, :post_id)
+    params.require(:comments).permit(:user_id, :post_id, :comment, :username)
   end
 end

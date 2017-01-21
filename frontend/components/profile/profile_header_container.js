@@ -4,8 +4,8 @@ import { listFollowedUser, listFollowers } from '../../reducers/selectors';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
 import ProfileHeader from './profile_header';
 
-const mapStateToProps = (state) => {
-
+const mapStateToProps = (state, ownProps) => {
+// console.log(ownProps);
   return ({
     currentUser: state.session.currentUser,
     targetUser: state.user.targetUser,

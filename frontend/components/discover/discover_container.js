@@ -1,19 +1,19 @@
 import { connect } from 'react-redux';
 import { listPosts } from '../../reducers/selectors';
 import { fetchPosts } from '../../actions/post_actions';
-import Feed from './feed';
+import { fetchUsers } from '../../actions/user_actions';
+import Discover from './discover';
 
 const mapStateToProps = ( state ) => ({
-  posts: listPosts(state),
-  following: state.session.currentUser.followed_users
 
-
+  users: state.user.users || []
 });
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
     fetchPosts: user => dispatch(fetchPosts(user)),
+    fetchUsers: () => dispatch(fetchUsers()),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps, mapDispatchToProps)(Discover);

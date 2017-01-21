@@ -5,6 +5,7 @@ import PostIndexItem from '../post_index_item/post_index_item_container';
 class Feed extends React.Component {
 	constructor(props) {
 		super(props);
+		this.selectPosts = this.selectPosts.bind(this);
 		this.userProfile = this.userProfile.bind(this);
   }
 
@@ -14,6 +15,26 @@ class Feed extends React.Component {
 
 	userProfile(user_id) {
 		hashHistory.push(`/users/${user_id}`);
+	}
+
+	link(linkId) {
+
+		return `/users/${linkId}`;
+	}
+
+
+	selectPosts(posts) {
+		// debugger;
+		if (posts && this.props.following) {
+			return (
+				posts.filter( (post) => (
+					this.props.following[post.user_id]
+					)
+				)
+			);
+		} else {
+			return [];
+		}
 	}
 
 	shuffle(posts) {
@@ -27,17 +48,22 @@ class Feed extends React.Component {
 }
 
   render() {
-    let posts = this.shuffle(this.props.posts);
+    // let posts = this.shuffle(this.props.posts);
+		let posts = this.selectPosts(this.props.posts);
+		// debugger;
     return (
       <div className="feed">
         {posts.map( (post) => {
 					return (
 						<div key={post.id} className="feed-post">
-							<img
-								src={post.user_image_url}
-								className="feed-img"
-								onClick={ () => this.userProfile(post.user_id) }
-							/>
+							<div>
+								<img
+									src={post.user_image_url}
+									className="feed-img"
+									onClick={ () => this.userProfile(post.user_id) }
+									/>
+								<Link to={this.link(post.user_id)} className="username-link-feed" >{post.username}</Link>
+							</div>
 							<PostIndexItem post={post} />
 						</div>
 					);

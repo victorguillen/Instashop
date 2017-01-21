@@ -14,7 +14,7 @@ class FollowPopup extends React.Component {
   }
 
   render() {
-    console.log(this.props.follows);
+    // console.log(this.props.follows);
     if(this.props.follows.length > 1) {
 
       let follows = this.props.follows.filter( (follow) => (follow.username != "default"));

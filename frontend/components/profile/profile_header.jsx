@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, hashHistory, Link } from "react-router";
 import Modal from 'react-modal';
 import modal from '../../util/modal';
 import FollowPopup from './follow_popup';
+import { withRouter } from 'react-router';
 
 
 class ProfileHeader extends React.Component {
@@ -16,8 +17,9 @@ class ProfileHeader extends React.Component {
     this.followerClick = this.followerClick.bind(this);
   }
 
-  componentReceivedProps() {
-    this.props.fetchTargetUser(this.props.targetUser.id);
+  componentDidMount() {
+    // console.log(this.props.router);
+    this.props.fetchTargetUser(this.props.router.params.id);
   }
 
 
@@ -52,6 +54,7 @@ class ProfileHeader extends React.Component {
       return (<Link to="/edit" className="profile-edit">Edit Profile</Link>);
     }
     // debugger;
+
     return (
       <Link
         to=""
@@ -64,11 +67,13 @@ class ProfileHeader extends React.Component {
 
   checkFollow() {
     let flag = false;
-    this.props.followers.forEach( (follower) => {
-      if(follower.username === this.props.currentUser.username) {
+    // console.log(this.props.currentUser);
+    // console.log(this.props.targetUser);
+    if(this.props.targetUser.followers) {
+      if (this.props.targetUser.followers[this.props.currentUser.id]) {
         flag = true;
       }
-    });
+    }
     return flag;
   }
 
@@ -83,7 +88,7 @@ class ProfileHeader extends React.Component {
         follower_id: this.props.currentUser.id,
         followed_id: this.props.targetUser.id
       } });
-      this.props.fetchTargetUser(this.props.targetUser.id);
+
     }
   }
 
@@ -95,6 +100,7 @@ class ProfileHeader extends React.Component {
         <div className="profile-container">
           <div className="profile-pic-container">
             <img src={this.props.targetUser.image_url} className="profile-pic" />
+
           </div>
           <div className="profile-stat-container">
             <div className="stat-top-container">
@@ -135,4 +141,4 @@ class ProfileHeader extends React.Component {
 }
 // follows={this.state.followInfo}
 
-export default ProfileHeader;
+export default withRouter(ProfileHeader);

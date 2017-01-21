@@ -1,6 +1,7 @@
-User.all.destroy_all
-Post.all.destroy_all
-
+User.destroy_all
+Post.destroy_all
+Follow.destroy_all
+Comment.destroy_all
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -11,16 +12,7 @@ Post.all.destroy_all
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create({
-  username: "kuro",
-  full_name: "Kuro Neko",
-  email: "kuro@gmail.com",
-  image_url: "https://res.cloudinary.com/duovuuybb/image/upload/v1484651664/profile_pics/kq74xvwfdmpvuuth246e.png",
-  bio: "Nya Nya",
-  password: "kuroneko"
-  });
-
-User.create({
-  username: "victorguillen",
+  username: "Editor",
   full_name: "Victor Guillen",
   email: "victor@gmail.com",
   image_url: "https://res.cloudinary.com/duovuuybb/image/upload/v1484673248/profile_pics/tpre7fde3lavvyt4jmal.png",
@@ -29,11 +21,23 @@ User.create({
   });
 
 User.create({
+  username: "kuro",
+  full_name: "Kuro Neko",
+  email: "kuro@gmail.com",
+  image_url: "https://res.cloudinary.com/duovuuybb/image/upload/v1484651664/profile_pics/kq74xvwfdmpvuuth246e.png",
+  bio: "Nya Nya",
+  password: "kuroneko"
+  });
+
+  Follow.new(follower_id: 2, followed_id: 1)
+
+
+User.create({
   username: "matt",
   full_name: "Matt Mc.",
   email: "matt@gmail.com",
   image_url: "https://res.cloudinary.com/duovuuybb/image/upload/v1484680543/profile_pics/vm2r8jyc7rltkcdcjasl.png",
-  bio: "Ok",
+  bio: "",
   password: "password"
   });
 
@@ -55,13 +59,88 @@ User.create({
   password: "password"
 });
 
+User.create({
+  username: "Antonio",
+  full_name: "Antonio Quadro",
+  email: "antonio@gmail.com",
+  image_url: "http://res.cloudinary.com/duovuuybb/image/upload/c_scale,r_76,w_150/v1484932900/998134_963113137098645_458954537496836306_n_simqzo.jpgs",
+  bio: "23 Brazil Architect",
+  password: "password"
+});
+
+User.create({
+  username: "ElifSezgin",
+  full_name: "Elif Sezgin",
+  email: "elif@gmail.com",
+  image_url: "http://res.cloudinary.com/duovuuybb/image/upload/c_crop,h_150,r_76,w_150,x_25,y_20/v1484933636/Elif_Sezgin_phocw9.jpg",
+  bio: "23 Turkey Biology major",
+  password: "password"
+});
+
+User.create({
+  username: "AdrianL",
+  full_name: "Adrian Lobdill",
+  email: "adrian@gmail.com",
+  image_url: "http://res.cloudinary.com/duovuuybb/image/upload/c_crop,h_150,r_76,w_150,x_25,y_20/v1484933290/Adrian_Lobdill_bhsxse.jpg",
+  bio: "web developer",
+  password: "password"
+});
+
+User.create({
+  username: "Bors",
+  full_name: "Boris Grogg",
+  email: "bor@gmail.com",
+  image_url: "https://cloudinary.com/console/media_library#/dialog/image/upload/Boris_Grogg_xubfc6",
+  bio: "Lawyer entrepreneur",
+  password: "password"
+});
+
+User.create({
+  username: "Brown",
+  full_name: "Bronwyn Dunn",
+  email: "bron@gmail.com",
+  image_url: "http://res.cloudinary.com/duovuuybb/image/upload/c_crop,h_150,r_76,w_150,x_25,y_20/v1484933760/Bronwyn_Dunn_jxzhgd.jpg",
+  bio: "25 Ireland curator",
+  password: "password"
+});
+
+
+User.create({
+  username: "Elle",
+  full_name: "Eileen Ho",
+  email: "elle@gmail.com",
+  image_url: "http://res.cloudinary.com/duovuuybb/image/upload/c_crop,h_150,r_76,w_150,x_25,y_20/v1484934108/Eileen_Ho_s35hgl.jpg",
+  bio: "28 SF",
+  password: "password"
+});
+
+User.create({
+  username: "Brit",
+  full_name: "Brittany F.",
+  email: "brit@gmail.com",
+  image_url: "http://res.cloudinary.com/duovuuybb/image/upload/c_scale,h_150,r_76,w_150/v1484934366/Screen_Shot_2017-01-20_at_9.44.36_AM_oonejl.png",
+  bio: "25 SD",
+  password: "password"
+});
+
+# User.create({
+#   username: "Brit",
+#   full_name: "Brittany F.",
+#   email: "brit@gmail.com",
+#   image_url: "http://res.cloudinary.com/duovuuybb/image/upload/c_scale,h_150,r_76,w_150/v1484934565/Screen_Shot_2017-01-20_at_9.48.58_AM_nir1nx.png",
+#   bio: "25 SD",
+#   password: "password"
+# });
+
+
+
 # Post.new({
 #   image_url: "",
 #   item_url: "",
 #   gender: "Male",
 #   price: 0,
 #   caption: "",
-#   user_id: User.find_by(username: "victorguillen").id
+#   user_id: User.find_by(username: "Editor").id
 #   });
 
 Post.create({
@@ -70,7 +149,7 @@ Post.create({
   gender: "Male",
   price: 89,
   caption: "adidas Colorado Windbreaker Jacket",
-  user_id: User.find_by(username: "victorguillen").id
+  user_id: User.find_by(username: "Editor").id
   });
 
 Post.create({
@@ -79,7 +158,7 @@ Post.create({
   gender: "Male",
   price: 49,
   caption: "BDG Light Blue Super Skinny Jean",
-  user_id: User.find_by(username: "victorguillen").id
+  user_id: User.find_by(username: "Editor").id
   });
 
 Post.create({
@@ -88,7 +167,7 @@ Post.create({
   gender: "Male",
   price: 160,
   caption: "adidas Tubular X Primeknit Sneaker",
-  user_id: User.find_by(username: "victorguillen").id
+  user_id: User.find_by(username: "Editor").id
   });
 
 Post.create({
@@ -97,7 +176,7 @@ Post.create({
   gender: "Male",
   price: 279,
   caption: "Draper Media Console",
-  user_id: User.find_by(username: "victorguillen").id
+  user_id: User.find_by(username: "Editor").id
   });
 
 Post.create({
@@ -106,7 +185,7 @@ Post.create({
   gender: "Male",
   price: 35,
   caption: "adidas X Pharrell Williams Brand Tee",
-  user_id: User.find_by(username: "victorguillen").id
+  user_id: User.find_by(username: "Editor").id
   });
 
 Post.create({
@@ -115,7 +194,7 @@ Post.create({
   gender: "Male",
   price: 85,
   caption: "adidas Stan Smith Gum Sole Sneaker",
-  user_id: User.find_by(username: "victorguillen").id
+  user_id: User.find_by(username: "Editor").id
   });
 
 Post.create({
@@ -124,7 +203,7 @@ Post.create({
   gender: "Male",
   price: 85,
   caption: "Dr. Martens Combs Boot",
-  user_id: User.find_by(username: "victorguillen").id
+  user_id: User.find_by(username: "Editor").id
   });
 
 # Post.create({

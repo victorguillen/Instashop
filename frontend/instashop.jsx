@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 
 
 import * as UtilUser from './util/user_api_util';
+import * as UtilCom from './util/comment_api_util';
 import * as UtilFollow from './util/follow_api_util';
 
 
@@ -21,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }} : {} ;
   const store = configureStore(preloadedState);
   Modal.setAppElement(document.body);
-  window.fetchTargetUser = UtilUser.fetchTargetUser;
-  window.createFollow = UtilFollow.createFollow;
-  window.deleteFollow = UtilFollow.deleteFollow;
+  window.fetchUsers = UtilUser.fetchUsers;
+  window.fetchComments = UtilCom.fetchComments;
+
   window.store = store;
   // Modal.setAppElement(document.header);
   const root = document.getElementById('root');

@@ -7,16 +7,21 @@ class NavBarForm extends React.Component {
     this.signout = this.signout.bind(this);
 		this.profile = this.profile.bind(this);
 		this.feed = this.feed.bind(this);
+		this.discover = this.discover.bind(this);
 		this.userId = this.props.currentUser.id;
 	}
 
   signout() {
-		
+
     this.props.logout().then( () => hashHistory.push('/login'));
   }
 
 	feed() {
 		hashHistory.replace('/');
+	}
+
+	discover() {
+		hashHistory.replace('/discover');
 	}
 
 
@@ -50,6 +55,11 @@ class NavBarForm extends React.Component {
 				</div>
 				<div className="icon-cont-wrapper">
 					<div className="icon-container">
+						<img
+							src="http://res.cloudinary.com/duovuuybb/image/upload/v1484947745/compass-icon-77519_fzeqe0.png"
+							onClick={this.discover}
+							className="icons"
+							/>
 						<img
 							src="http://res.cloudinary.com/duovuuybb/image/upload/v1484261923/update_b88nud.png"
 							onClick={this.post}

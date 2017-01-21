@@ -2,6 +2,27 @@
 @import "base/colors.scss";
 
 
+.modal-want2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 60px;
+  height: 20px;
+  font-family: "Avenir Next";
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: normal;
+  color: white;
+  border-radius: none;
+  background-color: $salmon;
+  border: 1px solid $salmon;
+}
+
+.post-div:hover .modal-want2 {
+  display: block;
+}
+
 .input-post {
   display: flex;
 
@@ -55,6 +76,7 @@
 }
 
 .post-div {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +149,7 @@
   align-items: center;
   justify-content: center;
   width: 70px;
-  height: 20px;
+  height: 30px;
   font-family: "Avenir Next";
   font-size: 20px;
   text-transform: capitalize;
@@ -144,7 +166,7 @@
   align-items: center;
   justify-content: center;
   width: 70px;
-  height: 20px;
+  height: 30px;
   font-family: "Avenir Next";
   font-size: 20px;
   text-transform: capitalize;
@@ -175,13 +197,7 @@
 }
 
 
-.modal-comment-box {
-  margin-top: 20px;
-  width: 287px;
-  height: 150px;
-  border: 1px solid #D3D3D3;
-  overflow: scroll;
-}
+
 
 .modal-comments {
   display: flex;

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchPosts } from '../../actions/post_actions';
 import { listPosts } from '../../reducers/selectors';
 import { fetchUser } from '../../actions/user_actions';
+
 import PostIndex from './post_index';
 
 const mapStateToProps = (state, ownProps) => {

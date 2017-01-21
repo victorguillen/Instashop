@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, default: { format: :json } do
     get '/users/target', to: 'users#target'
-    resources :users, only: [ :show, :create, :update ]
+    resources :users, only: [ :index, :show, :create, :update ]
     resources :follows, only: [ :create, :destroy]
     resource :session, only: [ :create, :destroy ]
     resources :posts, only: [ :index, :show, :create, :destroy ]

@@ -10,6 +10,7 @@ class PostIndex extends React.Component {
   }
 
 	componentDidMount() {
+		// window.scrollTo(0,0);
 		this.props.fetchUser(this.props.targetUserId).then( (action) => {
 			this.props.fetchPosts();
 			}

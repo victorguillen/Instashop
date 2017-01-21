@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
       # debugger;
       login(@user)
 
-      render "api/users/show"
+      render "api/users/target"
     else
       render json: [@user],
         status: 401

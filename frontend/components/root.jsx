@@ -11,6 +11,7 @@ import PostForm from './post_form/post_form_container';
 import Profile from './profile/profile_container';
 import Edit from './edit_form/edit_form_container';
 import Feed from './feed/feed_container';
+import Discover from './discover/discover_container';
 import ProfileHeader from './profile/profile_header_container';
 
 const Root = ({ store }) => {
@@ -37,6 +38,7 @@ const _redirectIfLoggedIn = (nextState, replace) => {
         <Route path="/" component={ App } onEnter={_ensureLoggedIn}>
           <IndexRoute component={ Feed }  />
           <Route path="/post" component={ PostForm }  />
+          <Route path="/discover" component={ Discover }  />
           <Route path="/users/:id" component={ Profile }  />
           <Route path="/edit" component={ Edit }  />
         </Route>
