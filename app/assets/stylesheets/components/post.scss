@@ -333,6 +333,7 @@
 
 .feed-post {
   display: flex;
+  align-items: center;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
@@ -344,4 +345,8 @@
   height: 150px;
   margin-left: 400px;
   cursor: pointer;
+}
+
+.div-feed-range {
+  width: 570px;
 }

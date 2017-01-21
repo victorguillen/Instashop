@@ -56,7 +56,7 @@ class Feed extends React.Component {
         {posts.map( (post) => {
 					return (
 						<div key={post.id} className="feed-post">
-							<div>
+							<div className="div-feed-range" >
 								<img
 									src={post.user_image_url}
 									className="feed-img"
