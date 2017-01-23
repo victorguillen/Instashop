@@ -1,75 +1,35 @@
 # Instashop
 
-[Heroku link][heroku]
+[Instashop Live][heroku]
 
-[heroku]: https://www.insta-shop.io
-
-[Trello link][trello]
-
-[trello]: https://trello.com/b/1CAoSL0m/instashop
-
-## Minimum Viable Product
+[heroku]: http://www.insta-shop.io/
 
 Instashop is an application that allows users to curate their own wishlists. Inspired by Instagram built using Ruby on Rails on the backend and React-Redux framework in the frontend.
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Production README [sample](docs/production_readme.md)
-- [ ] Photos
-- [ ] Likes
-- [ ] Commenting on photos
-- [ ] Following & Photo Feed
+## Features & Implementation
 
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+### Wishlist and Likes
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+In the users profile they can find all the items in their wishlist. The user can add items to their wishlist by liking another users post or by creating a new post.
 
-## Implementation Timeline
-
-### Phase 1: Backend setup and Front End User Authentication (2 days)
-
-**Objective:** Functioning rails project with front-end Authentication
+![image of a users profile](/docs/screenshots/profile.png)
 
 
-### Phase 2: Posts Model, API, and components (2 days)
+### Creating and Rendering Posts
 
-**Objective:** Posts can be created, read, edited and destroyed through
-the API.
+![image of post-form](/docs/screenshots/post.png)
 
+  Creating posts is easy, simply provide the websites url, the image address and the price. It's also possible to add a caption and a category. After submitting the item is posted on your profile.
 
-### Phase 3: Posts User Page (1 day)
+### Comments
 
-**Objective:** Posts appear on a user's profile.
+The user is able to leave comments on their posts or other peoples posts.
 
+![image of a post](/docs/screenshots/feed.png)
 
-### Phase 4: Followers (2 days)
+### Feed and Discover / Follow
 
-**Objective:** Users follow/unfollow other users.
+In the users feed the user can find the posts of people they are following. In the Discover page the user can find new users to follow.
 
-
-### Phase 5: Comments (1 day)
-
-**Objective:** Users can comment on posts.
-
-
-### Phase 6: Likes (1 days)
-
-**Objective:** Users can like posts and the tally is displayed
-
-### Phase 7: Pagination / infinite scroll for profile and feed ( 1 day )
-
-**objective:** Add infinite scroll to Posts Index
-
-### Bonus Features Owned Tab
-
-**objective:** Mark items as owned
+![image of the discover page](/docs/screenshots/discover.png)
