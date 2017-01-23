@@ -50,7 +50,7 @@ class Feed extends React.Component {
 
   render() {
     // debugger;
-		let posts = this.selectPosts(this.props.posts);
+		let posts = this.selectPosts(this.props.posts).reverse();
 		// debugger;
     return (
       <div className="feed">

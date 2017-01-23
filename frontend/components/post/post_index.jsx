@@ -56,7 +56,7 @@ class PostIndex extends React.Component {
 			return (
 				<div className="profile-div-row">
 					<ProfileHeader user={this.props.targetUser} />
-					{this.selectPosts(this.props.posts).map( (post) => <PostIndexItem post={post} key={post.id} /> )}
+					{this.selectPosts(this.props.posts.reverse()).map( (post) => <PostIndexItem post={post} key={post.id} /> )}
 					{this.fillerPost(this.props.posts)}
 				</div>
 			);

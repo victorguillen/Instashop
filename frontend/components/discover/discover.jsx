@@ -44,7 +44,7 @@ class Discover extends React.Component {
 		// debugger;
     return (
 			<div className="feed">
-				{ users.map( (user) => {
+				{ this.shuffle(users).map( (user) => {
 					return (
 						<div key={user.id}  className="follow-user-container">
 							<div className="follow-profile-container">
