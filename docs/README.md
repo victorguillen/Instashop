@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: https://www.heroku.com/home
+[heroku]: http://www.insta-shop.io/
 
 [Trello link][trello]
 
@@ -28,11 +28,11 @@ Instashop is an application that allows users to curate their own wishlists. Ins
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: ./docs/wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 
 ## Implementation Timeline
 
