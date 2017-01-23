@@ -9,9 +9,11 @@
 
     <script>
       <% if current_user %>
+        // debugger;
         window.currentUser = {
           username: '<%= current_user.username %>',
           id: <%= current_user.id %>
+          // user: <%= current_user %>
         }
       <% end %>
     </script>

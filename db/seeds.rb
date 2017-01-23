@@ -20,6 +20,7 @@ User.create({
   password: "password"
   });
 
+
 User.create({
   username: "kuro",
   full_name: "Kuro Neko",
@@ -151,6 +152,7 @@ Post.create({
   caption: "adidas Colorado Windbreaker Jacket",
   user_id: User.find_by(username: "Editor").id
   });
+
 
 Post.create({
   image_url: "https://res.cloudinary.com/duovuuybb/image/upload/v1484678012/user_posts/c67j6g9d6pudvmc2mfoa.png",

@@ -32,14 +32,16 @@ const _redirectIfLoggedIn = (nextState, replace) => {
   }
 };
 
+const _windowStartPos = () => ( window.scrollTo(0,0) );
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={ App } onEnter={_ensureLoggedIn}>
-          <IndexRoute component={ Feed }  />
+          <IndexRoute component={ Feed } onEnter={_windowStartPos}  />
           <Route path="/post" component={ PostForm }  />
-          <Route path="/discover" component={ Discover }  />
-          <Route path="/users/:id" component={ Profile }  />
+          <Route path="/discover" component={ Discover } onEnter={_windowStartPos}  />
+          <Route path="/users/:id" component={ Profile } onEnter={_windowStartPos}  />
           <Route path="/edit" component={ Edit }  />
         </Route>
         <Route path="login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />

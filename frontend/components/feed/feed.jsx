@@ -11,6 +11,7 @@ class Feed extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts();
+		this.props.fetchUser(this.props.targetUserId);
   }
 
 	userProfile(user_id) {
@@ -48,7 +49,7 @@ class Feed extends React.Component {
 }
 
   render() {
-    // let posts = this.shuffle(this.props.posts);
+    // debugger;
 		let posts = this.selectPosts(this.props.posts);
 		// debugger;
     return (

@@ -108,11 +108,39 @@
 }
 
 .or-div {
-  color: grey;
-  font-weight: bold;
-  text-align: center;
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+  justify-content: center;
   margin-top: 6px;
   margin-bottom: 0px;
+  width: 267px;
+  height: 18px;
+}
+
+.border-div-left {
+  width: 100px;
+  height: 9px;
+  margin-left: 19px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.border-div-right {
+  width: 100px;
+  height: 9px;
+  margin-right: 18px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.or-session {
+  width: 30px;
+  height: 18px;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  color: grey;
+  font-weight: normal;
+  text-align: center;
+
 }
 
 .errors {

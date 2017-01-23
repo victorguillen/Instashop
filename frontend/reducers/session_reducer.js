@@ -10,7 +10,7 @@ const _nullUser = Object.freeze({
 
 export const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
-
+// debugger;
   switch (action.type) {
     case SESSION_REDUCER_RECEIVE_CURRENT_USER:
 

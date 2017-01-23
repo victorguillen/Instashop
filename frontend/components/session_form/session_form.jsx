@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+// import ReactPlayer from 'react-player';
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -54,6 +55,31 @@ class SessionForm extends React.Component {
 			return ("Sign up");		}
 	}
 
+	guestRender() {
+		if (this.props.formType === "login") {
+			return (
+				<div>
+					<div className="or-div">
+						<div className="border-div-left"></div>
+						<div className="or-session">OR</div>
+						<div className="border-div-right"></div>
+					</div>
+					<input
+						type="button"
+						value="Guest Login"
+						onClick={this.guestLogin}
+						className="button-session"
+						/>
+				</div>
+			);
+		} else {
+			return (
+				<div></div>
+			);		}
+	}
+
+
+
 
 	renderErrors() {
 		// debugger;
@@ -73,12 +99,16 @@ class SessionForm extends React.Component {
 			</div>
 		);
 	}
+	// <img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484204524/iphone_iaml6n.png" className="img-login" />
 
 	render() {
 		// debugger;
 		return (
 			<div className="login-box">
-				<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484204524/iphone_iaml6n.png" className="img-login" />
+				<video className="video" autoPlay muted loop>
+        	<source src="http://res.cloudinary.com/duovuuybb/video/upload/v1485137437/vic_towtpl.mp4" type="video/mp4" />
+        Could not find video.
+      	</video>
 				<div className="victory-box">
 					<div className="login-div">
 						<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484187232/insta_logo_re5hwe.png" className="img-logo" />
@@ -102,14 +132,7 @@ class SessionForm extends React.Component {
 
 								<input type="submit" value={this.loginButton()} className="button-session" />
 							</div>
-
-							<div className="or-div">-------- OR --------</div>
-							<input
-								type="button"
-								value="Guest Login"
-								onClick={this.guestLogin}
-								className="button-session"
-							/>
+							{this.guestRender()}
 							{this.renderErrors()}
 						</form>
 					</div>

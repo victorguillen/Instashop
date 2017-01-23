@@ -62,17 +62,17 @@ update() {
 	}
 
 	handleSubmit(e) {
-		
+debugger;
 		e.preventDefault();
 		if (this.belongsToUser()) {
 			this.props.deletePost(this.post.id);
-			// this.modalClose();
+
 
 		} else {
 			let post = this.post;
 			post.user_id = this.props.user.id;
 			this.props.createPost({post: post});
-			// this.modalClose();
+
 		}
 	}
 
@@ -135,9 +135,9 @@ update() {
 
 			this.post = this.props.post;
 			return(
-				<div key={this.post.id} className={this.checkCSSDiv()} onClick={this.handleClick}>
+				<div key={this.post.id} className={this.checkCSSDiv()} >
 
-					<img src={this.post.image_url} className={this.checkCSSImg()} />
+					<img src={this.post.image_url} onClick={this.handleClick} className={this.checkCSSImg()} />
 					<div className="hov-but">
 						<button
 							className="modal-want2"
