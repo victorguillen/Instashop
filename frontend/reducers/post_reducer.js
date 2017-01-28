@@ -20,6 +20,7 @@ export const PostReducer = (state = defaultState, action) => {
         }
       });
     case POST_REDUCER_REMOVE_POST:
+      // debugger;
       let newState = merge({}, state);
       delete newState.posts[action.post.id];
       return newState;

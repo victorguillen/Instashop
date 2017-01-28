@@ -62,17 +62,19 @@ update() {
 	}
 
 	handleSubmit(e) {
-debugger;
+// debugger;
 		e.preventDefault();
 		if (this.belongsToUser()) {
+			// debugger;
 			this.props.deletePost(this.post.id);
-
+			// debugger;
 
 		} else {
+			// debugger;
 			let post = this.post;
 			post.user_id = this.props.user.id;
 			this.props.createPost({post: post});
-
+			// debugger;
 		}
 	}
 
