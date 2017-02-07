@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
   def show
     cloud_name = ENV['cloud_name']
     upload_profile_preset = ENV['uploud_profile_photo']
-    upload_post_preset = ENV['upload_post_item']
+    upload_post_preset = ENV['user_post']
   end
 
 # 151152912567472
