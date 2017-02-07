@@ -19,10 +19,10 @@ class Api::PostsController < ApplicationController
     upload_post_preset = ENV['user_post']
   end
 
-# 151152912567472
+# 151152912567472 , :upload_preset => 'user_post' 
   def create
     @post = Post.new(post_params)
-    new_url = Cloudinary::Uploader.unsigned_upload(@post.image_url, :upload_preset => 'user_post' )
+    new_url = Cloudinary::Uploader.unsigned_upload(@post.image_url)
     @post['image_url'] = new_url['secure_url']
     if @post.save
       render "api/posts/show"
