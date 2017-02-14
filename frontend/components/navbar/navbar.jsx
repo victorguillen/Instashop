@@ -1,4 +1,6 @@
 import React from 'react';
+import SearchBar from './search_bar';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link, withRouter, hashHistory } from 'react-router';
 
 class NavBarForm extends React.Component {
@@ -10,6 +12,13 @@ class NavBarForm extends React.Component {
 		this.discover = this.discover.bind(this);
 		this.userId = this.props.currentUser.id;
 	}
+
+	componentDidMount() {
+
+		this.props.fetchCurrentUser(this.props.currentUser.id);
+	}
+
+
 
   signout() {
 
@@ -49,10 +58,7 @@ class NavBarForm extends React.Component {
 							className="img-login-nav"
 							/>
 				</div>
-				<div className="search-container">
-					<i className="fa fa-search" aria-hidden="true"></i>
-					<p className="p-nav">Search</p>
-				</div>
+				<SearchBar users={this.props.users} />
 				<div className="icon-cont-wrapper">
 					<div className="icon-container">
 						<img
@@ -66,11 +72,14 @@ class NavBarForm extends React.Component {
 							className="icons"
 							/>
 						<br/>
-						<img
-							src="http://res.cloudinary.com/duovuuybb/image/upload/v1484261919/profile_icon_vu3j9s.png"
-							onClick={this.profile}
-							className="icons"
-							/>
+						<div className="profile-div">
+							<img
+								src="http://res.cloudinary.com/duovuuybb/image/upload/v1484261919/profile_icon_vu3j9s.png"
+								onClick={this.profile}
+								className="icons"
+								/>
+							<p className="post-count-header">{this.props.newCurrentUser.post_count}</p>
+						</div>
 						<br/>
 						<img
 							src="http://res.cloudinary.com/duovuuybb/image/upload/v1484261917/logout_icon_imvbmq.png"
@@ -83,5 +92,8 @@ class NavBarForm extends React.Component {
     );
   }
 }
-
 export default NavBarForm;
+// <div className="search-container">
+// 	<i className="fa fa-search" aria-hidden="true"></i>
+// 	<p className="p-nav">Search</p>
+// </div>

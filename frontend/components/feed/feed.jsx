@@ -9,7 +9,12 @@ class Feed extends React.Component {
 		this.userProfile = this.userProfile.bind(this);
   }
 
+	componentWillMount() {
+
+	}
+
   componentDidMount() {
+		this.props.fetchUsers();
     this.props.fetchPosts();
 		this.props.fetchUser(this.props.targetUserId);
   }
@@ -49,28 +54,25 @@ class Feed extends React.Component {
 }
 
   render() {
-    // debugger;
+
 		let posts = this.selectPosts(this.props.posts).reverse();
-		// debugger;
+
     return (
-      <div className="feed">
-        {posts.map( (post) => {
-					return (
-						<div key={post.id} className="feed-post">
-							<div className="div-feed-range" >
+			<div className="profile-div-row">
+				{posts.map( (post, i) => (
+					<div key={i} className="feed-post-rel">
+						<PostIndexItem  post={post} />
+						<div className="feed-post-abs">
 								<img
 									src={post.user_image_url}
 									className="feed-img"
 									onClick={ () => this.userProfile(post.user_id) }
 									/>
 								<Link to={this.link(post.user_id)} className="username-link-feed" >{post.username}</Link>
-							</div>
-							<PostIndexItem post={post} />
 						</div>
-					);
-				})
-			}
-      </div>
+					</div>
+				) )}
+			</div>
     );
   }
 }

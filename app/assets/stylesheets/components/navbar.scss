@@ -2,27 +2,58 @@
 @import "base/fonts.scss";
 @import "base/colors.scss";
 
+
+
 .icons {
-  width: 23px;
-	height: 23px;
+  width: 31px;
+	height: 31px;
   padding-left: 15px;
   padding-right: 15px;
   cursor: pointer;
 }
 
+.post-count-header {
+  border-bottom: 1px solid grey;
+  padding-top: 8px;
+  width: 20px;
+  margin-top: 7px;
+  color: black;
+}
 
+.auto-enter {
+   opacity: 0.01;
+   transform: translateY(500%);
+ }
+
+ .auto-enter.auto-enter-active {
+   opacity: 1;
+   transform: translateY(0);
+   transition: opacity 500ms, transform 500ms;
+ }
+
+ .auto-leave {
+   opacity: 1;
+   transform: translateY(0);
+ }
+
+ .auto-leave.auto-leave-active {
+   opacity: 0.01;
+   transform: translateY(500%);
+   transition: opacity 500ms, transform 500ms;
+ }
 
 .img-login-nav {
-  width: 120px;
-	height: 40px;
+  width: 130px;
+	height: 50px;
   padding-left: 10px;
   padding-right: 20px;
   cursor: pointer;
+
 }
 
 .img-logo-nav {
-  width: 35px;
-	height: 35px;
+  width: 45px;
+	height: 45px;
   padding-right: 20px;
   border-right: 1px solid grey;
   cursor: pointer;
@@ -32,6 +63,14 @@
   display: flex;
   width: 345px;
   height: 35px;
+  margin-top: 15px;
+}
+
+.profile-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .search-container {
@@ -45,8 +84,11 @@
   font-size: 14px;
   font-weight: lighter;
   border: 1px solid #dbdbdb;
-  width: 210px;
-  height: 26px;
+  width: 220px;
+  height: 28px;
+  flex-shrink: 0;
+  margin-top: 50px;
+  margin-left: 8px;
 }
 
 .icon-cont-wrapper {
@@ -54,6 +96,7 @@
   justify-content: flex-end;
   width: 357px;
 	height: 31px;
+  margin-top: 25px;
 }
 
 .icon-container {
@@ -74,10 +117,31 @@
   width: 100%;
 	height: 75px;
   border: 1px solid $grey;
+  padding-bottom: 60px;
 }
 
 .p-nav {
   margin-left: 10px;
+  width: 187px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.search-bar-container {
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  margin-top: 30px;
+}
+
+.auto-fill {
+  background: $grey;
+  border-radius: 3px;
+  color: $light-grey;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  font-weight: lighter;
+  overflow: scroll;
 }
 
 #root {

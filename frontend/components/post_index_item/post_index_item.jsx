@@ -62,19 +62,33 @@ update() {
 	}
 
 	handleSubmit(e) {
-// debugger;
+
 		e.preventDefault();
 		if (this.belongsToUser()) {
-			// debugger;
 			this.props.deletePost(this.post.id);
-			// debugger;
+			this.props.fetchCurrentUser(this.props.user.id);
 
 		} else {
-			// debugger;
-			let post = this.post;
-			post.user_id = this.props.user.id;
-			this.props.createPost({post: post});
-			// debugger;
+
+			this.props.createPost({post: {
+				price: this.post.price,
+				caption: this.post.caption,
+				image_url: this.post.image_url,
+				item_url: this.post.item_url,
+				user_id: this.props.user.id,
+				gender: this.post.gender
+			}});
+			$('.savedpost').css('opacity', 1)
+			$('.post-count-header').css('color', '#FE5955')
+			setInterval( () => {
+				$('.savedpost').css('opacity', 0)
+				$('.post-count-header').css('color', '#000000')
+			}, 1500)
+
+
+
+
+			this.props.fetchCurrentUser(this.props.user.id)
 		}
 	}
 
@@ -140,6 +154,9 @@ update() {
 				<div key={this.post.id} className={this.checkCSSDiv()} >
 
 					<img src={this.post.image_url} onClick={this.handleClick} className={this.checkCSSImg()} />
+					<div className="hov-but">
+						<p className="savedpost">Saved</p>
+					</div>
 					<div className="hov-but">
 						<button
 							className="modal-want2"

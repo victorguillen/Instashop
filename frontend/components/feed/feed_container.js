@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { listPosts } from '../../reducers/selectors';
 import { fetchPosts } from '../../actions/post_actions';
-import { fetchUser } from '../../actions/user_actions';
+import { fetchUser, fetchUsers } from '../../actions/user_actions';
 
 import Feed from './feed';
 
@@ -14,7 +14,9 @@ const mapStateToProps = ( state ) => ({
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
     fetchPosts: user => dispatch(fetchPosts(user)),
-    fetchUser: id => dispatch(fetchUser(id))
+    fetchUser: id => dispatch(fetchUser(id)),
+    fetchUsers: () => dispatch(fetchUsers()),
+
 
   };
 };
