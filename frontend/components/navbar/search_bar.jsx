@@ -14,6 +14,9 @@ class SearchBar extends React.Component {
 		this.routeProfile = this.routeProfile.bind(this);
     this.matches = this.matches.bind(this);
 	}
+	componentDidMount() {
+		this.setState( { userSearch: "" } )
+	}
 
 
   handleInput(event) {
@@ -49,13 +52,14 @@ class SearchBar extends React.Component {
   }
 
 	routeProfile(event) {
-		
+
 		let id = 0;
 		let username = this.state.userSearch;
 		if (event.key === 'Enter' && username != "") {
 			this.props.users.forEach( user => {
 				if (user.username === username) { id = user.id }
 			});
+			
 			hashHistory.push(`/users/${id}`);
 		}
 	}
