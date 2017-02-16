@@ -126,7 +126,14 @@ class ProfileHeader extends React.Component {
             contentLabel="Modal"
             style={modal}
           >
-          <FollowPopup follows={this.state.followInfo} />
+          <div className='follow-modal-close'>
+            <div className="modal-close">
+              <img src="http://res.cloudinary.com/duovuuybb/image/upload/v1487228670/xb_is00go.png"
+                onClick={ this.modalClose }
+                className="close-modal-img"/>
+            </div>
+            <FollowPopup follows={this.state.followInfo} />
+          </div>
           </Modal>
         </div>
       );

@@ -43,6 +43,16 @@
   opacity: 0;
 }
 
+.modal-close {
+  position: absolute;
+  top: 0;
+  left:0;
+  display: block;
+  // display: none;
+  width: 15px;
+  height: 15px;
+}
+
 @keyframes fadein {
     from { opacity: 1; }
     to   { opacity: 0; }
@@ -133,6 +143,12 @@
   align-items: center;
   width: 784px;
   height: 449px;
+  position: relative;
+}
+
+.close-modal-img {
+  height: 50px;
+  width: 50px;
 }
 
 .modal-rightside {
@@ -148,6 +164,7 @@
   width: 449px;
   height: 449px;
   cursor: pointer;
+
 }
 
 .post-img {

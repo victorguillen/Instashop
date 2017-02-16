@@ -174,6 +174,11 @@ update() {
 						style={modal}
 						>
 						<div className="modal-post">
+								<div className="modal-close">
+									<img src="http://res.cloudinary.com/duovuuybb/image/upload/v1487228670/xb_is00go.png"
+										onClick={ this.modalClose }
+										className="close-modal-img"/>
+								</div>
 							<div className="modal-img" onClick={this.openLink(this.post.item_url)}>
 								<img src={this.post.image_url} className='modal-img'/>
 							</div>
@@ -184,7 +189,7 @@ update() {
 								<div className='modal-body'>
 									<div className="modal-price-container">
 										<p className="modal-caption">{this.post.caption}</p>
-										
+
 										<p className="modal-price">${this.post.price}</p>
 									</div>
 								</div>
