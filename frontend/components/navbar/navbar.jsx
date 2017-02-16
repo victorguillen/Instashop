@@ -19,7 +19,6 @@ class NavBarForm extends React.Component {
 	}
 
 
-
   signout() {
 
     this.props.logout().then( () => hashHistory.push('/login'));

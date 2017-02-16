@@ -48,7 +48,7 @@ class Feed extends React.Component {
         let j = Math.floor(Math.random() * (i + 1));
         let temp = posts[i];
         posts[i] = posts[j];
-        posts[j] = temp;
+        posts[j] = temp
     }
     return posts;
 }
