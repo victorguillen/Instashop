@@ -182,9 +182,9 @@ update() {
 									<img src={this.post.user_image_url} className="modal-img-user" />
 								</header>
 								<div className='modal-body'>
-									<div>
+									<div className="modal-price-container">
 										<p className="modal-caption">{this.post.caption}</p>
-										<br/>
+										
 										<p className="modal-price">${this.post.price}</p>
 									</div>
 								</div>

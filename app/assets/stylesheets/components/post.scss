@@ -20,6 +20,12 @@
   border: 1px solid $salmon;
 }
 
+.modal-price-container {
+  // overflow: hidden;
+  // height: 80px;
+  // width: 340px;
+}
+
 .savedpost {
   position: absolute;
   top: 85px;
@@ -165,11 +171,13 @@
 .modal-caption {
   display: flex;
   align-items: center;
-  margin-top: 25px;
+  // margin-top: 25px;
+  margin-left: 15px;
   width: 350px;
   font-family: "Avenir Next";
-  font-size: 20px;
+  font-size: 16px;
   font-weight: normal;
+  flex-wrap: wrap;
 }
 .modal-want-buy-container {
   display: flex;
@@ -221,15 +229,17 @@
   color: grey;
   font-size: 16px;
   font-weight: normal;
+  // height: 20px;
+  margin-left: 15px;
 }
 
 .modal-body {
   display: flex;
   align-items: flex-start;
   flex-flow: column;
-  width: 335px;
+  width: 330px;
   height: 125px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 
