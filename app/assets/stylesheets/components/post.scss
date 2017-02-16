@@ -373,25 +373,41 @@
 }
 
 .feed-post-rel {
-  position: relative;
+  // position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  flex-direction: column;
   width: 293px;
-  height: 293px;
+  height: 353px;
   margin: 20px;
   cursor: pointer;
 }
 
 .feed-post-abs {
-  position: absolute;
+  // position: absolute;
+
+  height: 60px;
+  background-color: "#FAFAFA";
   bottom: 0;
   left: 0;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;;
+  justify-content: flex-start;
 }
 
+.feed-post-prof-img {
+  margin-right: 10px;
+  margin-left: 26px;
+}
 
+.feed-post-link-prof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 
 .upload-div {
   display: flex;
@@ -436,8 +452,8 @@
 }
 
 .feed-img {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   // margin-left: 400px;
   cursor: pointer;
 }

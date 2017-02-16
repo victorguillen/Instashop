@@ -77,8 +77,13 @@ class NavBarForm extends React.Component {
 								onClick={this.profile}
 								className="icons"
 								/>
-							<p className="post-count-header">{this.props.newCurrentUser.post_count}</p>
 						</div>
+						<br/>
+							<div className="p-icons">
+								<div className="post-count-header">
+									<p className="p-icon-text">{this.props.newCurrentUser.post_count}</p>
+								</div>
+							</div>
 						<br/>
 						<img
 							src="http://res.cloudinary.com/duovuuybb/image/upload/v1484261917/logout_icon_imvbmq.png"

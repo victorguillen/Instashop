@@ -6,6 +6,7 @@ class PostIndexItem extends React.Component {
 	constructor(props) {
 		super(props);
 		// this.state = { comment: "" }
+		this.interval;
 		this.openLink = this.openLink.bind(this);
 		this.state = { modalOpen: false, comment: "" };
     this.handleClick = this.handleClick.bind(this);
@@ -62,7 +63,7 @@ update() {
 	}
 
 	handleSubmit(e) {
-
+		clearInterval(this.interval);
 		e.preventDefault();
 		if (this.belongsToUser()) {
 			this.props.deletePost(this.post.id);
@@ -79,11 +80,11 @@ update() {
 				gender: this.post.gender
 			}});
 			$('.savedpost').css('opacity', 1)
-			$('.post-count-header').css('color', '#FE5955')
-			setInterval( () => {
+			$('.post-count-header').css('background-color', '#FE5955')
+			this.interval = setInterval( () => {
 				$('.savedpost').css('opacity', 0)
-				$('.post-count-header').css('color', '#000000')
-			}, 1500)
+				$('.post-count-header').css('background-color', '#000000')
+			}, 750)
 
 
 

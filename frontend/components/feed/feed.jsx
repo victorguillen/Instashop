@@ -63,12 +63,16 @@ class Feed extends React.Component {
 					<div key={i} className="feed-post-rel">
 						<PostIndexItem  post={post} />
 						<div className="feed-post-abs">
+							<div className="feed-post-prof-img">
 								<img
 									src={post.user_image_url}
 									className="feed-img"
 									onClick={ () => this.userProfile(post.user_id) }
 									/>
+							</div>
+							<div className="feed-post-link-prof">
 								<Link to={this.link(post.user_id)} className="username-link-feed" >{post.username}</Link>
+							</div>
 						</div>
 					</div>
 				) )}
