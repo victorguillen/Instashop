@@ -388,6 +388,17 @@
   overflow-y: scroll;
 }
 
+.feed2 {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
 .feed-post {
   display: flex;
   align-items: center;
