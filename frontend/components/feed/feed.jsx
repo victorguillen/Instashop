@@ -62,7 +62,6 @@ class Feed extends React.Component {
 				{posts.map( (post, i) => (
 					<div key={i} className="feed-post-rel">
 						<PostIndexItem  post={post} />
-						<p>YESSSSSS</p>
 						<div className="feed-post-abs">
 								<img
 									src={post.user_image_url}
