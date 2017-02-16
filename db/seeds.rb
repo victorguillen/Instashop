@@ -342,6 +342,7 @@ User.create({
 # Edito
 # #
 Follow.create(follower_id: User.find_by(username: "kuro").id, followed_id: User.find_by(username: "Editor").id)
+Follow.create(follower_id: User.find_by(username: "Editor").id, followed_id: User.find_by(username: "kuro").id)
 Follow.create(follower_id: User.find_by(username: "matt").id, followed_id: User.find_by(username: "Editor").id)
 Follow.create(follower_id: User.find_by(username: "laxicama").id, followed_id: User.find_by(username: "Editor").id)
 Follow.create(follower_id: User.find_by(username: "elo-elo").id, followed_id: User.find_by(username: "Editor").id)

@@ -18,6 +18,11 @@ class Api::UsersController < ApplicationController
           # debugger
           @follow.save
         end
+        @follow2 = Follow.new(follower_id: @editor.id, followed_id: @user.id)
+        if @follow2
+          # debugger
+          @follow2.save
+        end
       end
       login(@user)
       render "api/users/show"
