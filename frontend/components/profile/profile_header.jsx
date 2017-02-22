@@ -16,7 +16,7 @@ class ProfileHeader extends React.Component {
     this.followClick = this.followClick.bind(this);
     this.followerClick = this.followerClick.bind(this);
   }
-
+</div>
   componentDidMount() {
     // console.log(this.props.router);
     this.props.fetchTargetUser(this.props.router.params.id);
@@ -137,12 +137,6 @@ class ProfileHeader extends React.Component {
           </Modal>
         </div>
       );
-    // } else {
-    //   return (
-    //
-    //     <div></div>
-    //   );
-    // }
 
   }
 }

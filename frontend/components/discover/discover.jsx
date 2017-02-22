@@ -30,7 +30,7 @@ class Discover extends React.Component {
         posts[j] = temp;
     }
     return posts;
-}
+	}
 
   render() {
 

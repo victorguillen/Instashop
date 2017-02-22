@@ -121,7 +121,6 @@ update() {
 
 	// <p className="comment-title">{comment.username}</p>
   comments(){
-		// debugger;
 
 		if(this.props.comments && this.props.comments.length > 0) {
 			return (
@@ -137,7 +136,6 @@ update() {
 						</div>
 					)}
 				</div>
-
 			);
 		} else {
 			return (
@@ -147,8 +145,7 @@ update() {
   }
 // refactor modal out of this render, move to own file
   render() {
-			// console.log(this.props);
-		// if (this.props.user) {
+
 
 			this.post = this.props.post;
 			return(
@@ -216,9 +213,6 @@ update() {
 
 				</div>
 			);
-		// } else {
-		// 	return <div></div> ;
-		// }
   }
 }
 

@@ -1,15 +1,7 @@
 class Api::PostsController < ApplicationController
 
   def index
-    # cloud_name = ENV['cloud_name']
-    # upload_profile_preset = ENV['uploud_profile_photo']
-    # upload_post_preset = ENV['upload_post_item']
-    # debugger;
-    # if params[:id]
-    #   @posts = User.find(params[:id]).posts
-    # else
       @posts = Post.all
-    # end
     render :index
   end
 
