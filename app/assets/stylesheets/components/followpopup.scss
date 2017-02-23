@@ -58,9 +58,10 @@
   flex-flow: row;
   align-items: center;
   justify-content: flex-start;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   width: 500px;
-  height: 140px;
+  height: 150px;
   background-color: white;
 }
 

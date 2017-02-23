@@ -55,7 +55,7 @@
   // length: 200px;
 }
 
-.post-followers {
+.post-followers2 {
   display: flex;
   align-items: center;
   margin-right: 40px;
@@ -66,6 +66,16 @@
   // cursor: pointer;
 }
 
+.post-followers {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  // margin-left: 5px;
+  font-family: "Avenir Next";
+  font-size: 14px;
+  font-weight: normal;
+  cursor: pointer;
+}
 
 .profile-stats {
   display: flex;

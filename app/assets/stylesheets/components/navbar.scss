@@ -161,15 +161,22 @@
 }
 
 .auto-fill {
+  width: 222px;
+  margin-left: 9px;
+  display: block;
+  height: 50px;
+}
+
+.auto-ul {
+  overflow-y: scroll;
   background: $grey;
   border-radius: 3px;
   color: $light-grey;
   font-family: "Avenir Next";
   font-size: 14px;
   font-weight: lighter;
-  overflow: scroll;
-  width: 220px;
-  margin-left: 9px;
+
+  width: 100%;
 }
 
 .follow-modal-close {

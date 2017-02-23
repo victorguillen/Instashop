@@ -21,14 +21,14 @@ class FollowPopup extends React.Component {
 
       return (
         <div className="main-follow-container">
-          {follows.map( (follow) =>
-            <div className="follow-user-container" >
+          {follows.map( (follow, ind) =>
+            <div key={ind} className="follow-user-container" >
               <div className="follow-profile-container">
                 <img src={follow.image_url} className="follow-profile-img" />
                 <Link to={this.link(follow.id)} className="username-link" >{follow.username}</Link>
               </div>
               <div className="img-follow-container">
-                { follow.posts.map(  (post) => <PostIndexItem key={post.id} post={post} followCSS={{img: "follow-post-img", div: "img-index-div"}} /> )}
+                { follow.posts.map(  (post) => <PostIndexItem key={post.id} post={post} followCSS={{img: "follow-post-img", div: ""}} /> )}
               </div>
             </div>
           )}

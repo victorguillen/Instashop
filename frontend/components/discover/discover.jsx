@@ -52,7 +52,7 @@ class Discover extends React.Component {
 								<Link to={this.link(user.id)} className="username-link" >{user.username}</Link>
 							</div>
 							<div className="img-follow-container">
-								{ user.posts.map(  (post) => <PostIndexItem key={post.id} post={post} followCSS={{img: "follow-post-img", div: "img-index-div"}} /> )}
+								{ user.posts.map(  (post, ind) => <PostIndexItem key={ind} post={post} followCSS={{img: "follow-post-img", div: ""}} /> )}
 							</div>
 						</div>
 					);

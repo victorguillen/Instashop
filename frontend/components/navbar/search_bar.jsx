@@ -25,8 +25,9 @@ class SearchBar extends React.Component {
 
   matches() {
     // debugger;
+		let emptyUser = { username: "No matches found" }
     let caseMatches = [];
-    if (this.state.userSearch.length === 0) {
+    if (this.state.userSearch.length === 0 && this.state.userSearch != "No matches found") {
       return this.state.users;
     }
 
@@ -37,10 +38,9 @@ class SearchBar extends React.Component {
         caseMatches.push(user);
       }
     });
-
-    if (caseMatches.length === 0) {
-      return caseMatches.push("No matches found");
-    }
+		if(caseMatches.length === 0) {
+			caseMatches = [emptyUser];
+		}
 
     return caseMatches;
   }
@@ -52,14 +52,13 @@ class SearchBar extends React.Component {
   }
 
 	routeProfile(event) {
-
 		let id = 0;
 		let username = this.state.userSearch;
-		if (event.key === 'Enter' && username != "") {
+		if (event.key === 'Enter' && username != "No matches found") {
 			this.props.users.forEach( user => {
 				if (user.username === username) { id = user.id }
 			});
-			
+
 			hashHistory.push(`/users/${id}`);
 		}
 	}
@@ -67,15 +66,26 @@ class SearchBar extends React.Component {
 
 
   render() {
-		// console.log(this.matches);
-    let results = this.matches().map( (match, i) => {
-			if(match.username) {
-				return (
-					<li key={i}  onClick={this.selectUser}>{match.username}</li>
-				);
-			}
-    });
-		console.log(this.state.userSearch);
+
+
+    let results;
+		if (this.matches().length === 0) {
+			results = <div></div> ;
+		} else {
+
+			results = this.matches().map( (match, i) => {
+				if(match.username) {
+					return (
+						<li key={i}  onClick={this.selectUser}>{match.username}</li>
+					);
+				} else {
+					return (
+						<li></li>
+					)
+				}
+			});
+
+		}
 
     return (
 			<div className="search-bar-container">
@@ -91,7 +101,7 @@ class SearchBar extends React.Component {
 
 				</div>
 				<div className="auto-fill">
-					<ul>
+					<ul className="auto-ul">
 						<ReactCSSTransitionGroup
 							transitionName='auto'
 							transitionEnterTimeout={500}
@@ -103,8 +113,9 @@ class SearchBar extends React.Component {
 			</div>
 
     );
-  }
+	}
 }
+
 
 export default SearchBar;
 

@@ -16,7 +16,7 @@ class ProfileHeader extends React.Component {
     this.followClick = this.followClick.bind(this);
     this.followerClick = this.followerClick.bind(this);
   }
-</div>
+
   componentDidMount() {
     // console.log(this.props.router);
     this.props.fetchTargetUser(this.props.router.params.id);
@@ -109,7 +109,7 @@ class ProfileHeader extends React.Component {
               <img src="http://res.cloudinary.com/duovuuybb/image/upload/v1484630662/Screen_Shot_2017-01-16_at_9.23.23_PM_w4czwv.png" />
             </div>
             <div className="profile-stats">
-              <p className="post-followers">{this.props.targetUser.post_count} Posts</p>
+              <p className="post-followers2">{this.props.targetUser.post_count} Posts</p>
               <p onClick={() => this.followerClick(this.props.followers)} className="post-followers">{this.props.followers.length -1} Followers</p>
               <p onClick={() => this.followClick(this.props.followedUsers)} className="post-followers">{this.props.followedUsers.length -1} Following</p>
             </div>
