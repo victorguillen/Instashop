@@ -17,6 +17,14 @@ end
       json.username followed_user.username
       json.image_url followed_user.image_url
       json.posts followed_user.posts
+      # @test = followed_user.posts
+      # json.set! "posts" do
+      #   @test.each do |post, id|
+      #     json.array! id do
+      #       json.id post.id
+      #     end
+      #   end
+      # end
       json.id followed_user.id
     end
   end

@@ -16,10 +16,10 @@ end
 @user.followed_users.each do |followed_user|
   json.followed_users do
     json.set! followed_user.id do
-      json.username followed_user.username
-      json.image_url followed_user.image_url
-      json.posts followed_user.posts
-      json.id followed_user.id
+      # json.username followed_user.username
+      # json.image_url followed_user.image_url
+      # json.posts followed_user.posts
+      # json.id followed_user.id
     end
   end
 end
