@@ -57,7 +57,6 @@ class NavBarForm extends React.Component {
 							className="img-login-nav"
 							/>
 				</div>
-				<SearchBar users={this.props.users} />
 				<div className="icon-cont-wrapper">
 					<div className="icon-container">
 						<img
@@ -101,3 +100,5 @@ export default NavBarForm;
 // 	<i className="fa fa-search" aria-hidden="true"></i>
 // 	<p className="p-nav">Search</p>
 // </div>
+
+// <SearchBar users={this.props.users} />

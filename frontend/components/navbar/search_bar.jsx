@@ -30,7 +30,8 @@ class SearchBar extends React.Component {
     if (this.state.userSearch.length === 0 && this.state.userSearch != "No matches found") {
       return this.state.users;
     }
-		if (this.state.userSearch.length != 0) {
+		if (this.state.userSearch.length > 0) {
+			// debugger;
 			this.props.users.forEach( user => {
 
 				let subName = user.username.slice(0, this.state.userSearch.length);
